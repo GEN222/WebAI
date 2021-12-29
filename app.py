@@ -26,6 +26,10 @@ app = Flask(__name__)
 app.secret_key  = os.urandom(24)
 app.permanent_session_lifetime = timedelta(minutes=5)
 
+# トップページにアクセスされたらindex.htmlを表示する
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 
 # ユーザーがcsvをアップロードした際に実行
