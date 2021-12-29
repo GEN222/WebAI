@@ -27,6 +27,7 @@ app.secret_key  = os.urandom(24)
 app.permanent_session_lifetime = timedelta(minutes=5)
 
 
+
 # ユーザーがcsvをアップロードした際に実行
 @app.route('/show', methods=['POST'])
 def show():
