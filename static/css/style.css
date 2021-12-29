@@ -47,3 +47,9 @@ button.btn:hover{
     padding-bottom: 0%;
     text-align: center;
 }
+
+.csv_message{
+    font-weight: 700;
+    color: #384878;
+    font-size: 1.2em;
+}

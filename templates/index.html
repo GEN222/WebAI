@@ -12,16 +12,17 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="{{ url_for('static',filename='js/src.js') }}"></script>
+  <script src="{{ url_for('static',filename='js/ajax.js') }}"></script>
 
   <link rel="stylesheet" href="static/css/style.css">
 
   <title>WebAI</title>
-  
+
 </head>
 <body>
   
   <div>
-    <form >
+    <form id="upload_form" onsubmit="return false;">
       <div id="file_form" class = "file_form">
         <button class="btn">
           <label for="file_upload">
