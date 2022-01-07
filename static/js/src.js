@@ -116,6 +116,10 @@ const createNullMenu = (nullColumns) => {
         // selectを作成、カラムはここで表示する
         const select = document.createElement('select');
         select.setAttribute('name', 'kinds_null_columns');
+        // switchRadioMenusで表示するradioメニューを切り替える
+        select.onchange = function () {
+            switchRadioMenus(this.value, keys);
+        };
 
         const defaultOption = document.createElement('option');
         const defaultLabel = document.createElement('label');
@@ -137,6 +141,23 @@ const createNullMenu = (nullColumns) => {
         }
 
         wrapper.appendChild(nullMenu);
+
+    }
+
+}
+
+
+// 指定された要素を表示し、他要素をすべて非表示
+const switchRadioMenus = (key, keys) => {
+
+    for (let i = 0; i < keys.length; i++) {
+
+        const element = document.getElementById("null_" + keys[i]);
+        if (key == keys[i]) {
+            element.style.display = "";
+        } else {
+            element.style.display = "none";
+        }
 
     }
 
@@ -167,13 +188,12 @@ const creatObjMenu = (key) => {
 
     const div = document.createElement('div');
     div.setAttribute('id', 'null_' + key);
-    // div.setAttribute('style', 'display: none');
+    div.setAttribute('style', 'display: none');
 
     div.appendChild(createProcessingRadio(key, 'mode'));
     div.appendChild(createProcessingLabel(key, 'mode', '最頻値'));
     div.appendChild(createProcessingRadio(key, 'dele'));
     div.appendChild(createProcessingLabel(key, 'dele', '削除'));
-
 
     return div
 
@@ -183,7 +203,7 @@ const creatIntMenu = (key) => {
 
     const div = document.createElement('div');
     div.setAttribute('id', 'null_' + key);
-    // div.setAttribute('style', 'display: none');
+    div.setAttribute('style', 'display: none');
 
     div.appendChild(createProcessingRadio(key, 'mode'));
     div.appendChild(createProcessingLabel(key, 'mode', '最頻値'));
