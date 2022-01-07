@@ -124,18 +124,64 @@ const createNullMenu = (nullColumns) => {
         defaultOption.appendChild(defaultLabel);
         select.appendChild(defaultOption);
 
+        nullMenu.appendChild(select);
+
         for (let i = 0; i < keys.length; i++) {
 
             const option = document.createElement('option');
             option.setAttribute('value', keys[i]);
             option.innerHTML = keys[i] + ' : 欠損数/' + nullColumns[keys[i]][0] + '個(' + nullColumns[keys[i]][2] + '%)';
             select.appendChild(option);
+            nullMenu.appendChild(createRadioMenu(keys[i]));
 
         }
 
-        nullMenu.appendChild(select);
         wrapper.appendChild(nullMenu);
 
     }
 
+}
+
+
+const createRadioMenu = (key) => {
+
+    return creatObjMenu(key);
+
+}
+
+
+
+const creatObjMenu = (key) => {
+
+    const div = document.createElement('div');
+    div.setAttribute('id', 'null_' + key);
+    // div.setAttribute('style', 'display: none');
+
+    div.appendChild(createProcessingRadio(key, 'mode'));
+    div.appendChild(createProcessingLabel(key, 'mode', '最頻値'));
+
+    return div
+
+}
+
+
+const createProcessingRadio = (key, value) => {
+
+    const input = document.createElement('input');
+    input.setAttribute('name', key);
+    input.setAttribute('type', 'radio');
+    input.setAttribute('id', value + '_' + key);
+    input.setAttribute('value', value);
+
+    return input;
+
+}
+
+const createProcessingLabel = (key, value, labelName) => {
+
+    const label = document.createElement('label');
+    label.setAttribute('for', value + '_' + key);
+    label.innerHTML = labelName;
+
+    return label;
 }
