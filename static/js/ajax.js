@@ -22,6 +22,7 @@ const sampleHandler = (file) => {
             const nullColumns = JSON.parse(data.values).null_columns;
 
             createTargetMenu(Object.keys(columns));
+            createNullMenu(nullColumns);
 
             Swal.close();
 

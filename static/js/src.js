@@ -93,3 +93,49 @@ const createTargetMenu = (columns) => {
     wrapper.appendChild(targetMenu);
 
 }
+
+
+const createNullMenu = (nullColumns) => {
+
+    // keyを取得
+    const keys = Object.keys(nullColumns);
+
+    // 欠損値がない場合は処理しない
+    if (keys.length > 0) {
+
+        // 親のdivを呼び出し
+        const wrapper = document.getElementById('wrapper');
+        const nullMenuId = 'null_menu';
+
+        // null_menuが作られている場合には削除する
+        removeElement(nullMenuId);
+
+        const nullMenu = document.createElement('div');
+        nullMenu.setAttribute('id', nullMenuId);
+
+        // selectを作成、カラムはここで表示する
+        const select = document.createElement('select');
+        select.setAttribute('name', 'kinds_null_columns');
+
+        const defaultOption = document.createElement('option');
+        const defaultLabel = document.createElement('label');
+        defaultOption.setAttribute('value', '');
+        defaultLabel.innerHTML = '欠損値を選択してください';
+        defaultOption.appendChild(defaultLabel);
+        select.appendChild(defaultOption);
+
+        for (let i = 0; i < keys.length; i++) {
+
+            const option = document.createElement('option');
+            option.setAttribute('value', keys[i]);
+            option.innerHTML = keys[i] + ' : 欠損数/' + nullColumns[keys[i]][0] + '個(' + nullColumns[keys[i]][2] + '%)';
+            select.appendChild(option);
+
+        }
+
+        nullMenu.appendChild(select);
+        wrapper.appendChild(nullMenu);
+
+    }
+
+}
