@@ -132,7 +132,7 @@ const createNullMenu = (nullColumns) => {
             option.setAttribute('value', keys[i]);
             option.innerHTML = keys[i] + ' : 欠損数/' + nullColumns[keys[i]][0] + '個(' + nullColumns[keys[i]][2] + '%)';
             select.appendChild(option);
-            nullMenu.appendChild(createRadioMenu(keys[i]));
+            nullMenu.appendChild(createRadioMenu(keys[i], nullColumns));
 
         }
 
@@ -143,10 +143,22 @@ const createNullMenu = (nullColumns) => {
 }
 
 
-const createRadioMenu = (key) => {
+const createRadioMenu = (key, nullColumns) => {
 
-    return creatObjMenu(key);
+    if (key) {
+        if (judgeType(nullColumns[key][1])) {
+            return creatObjMenu(key);
+        } else {
+            return creatIntMenu(key);
+        }
+    }
 
+}
+
+
+// 引数がobjectか判定
+const judgeType = (type) => {
+    return type == 'object' ? true : false
 }
 
 
@@ -159,6 +171,30 @@ const creatObjMenu = (key) => {
 
     div.appendChild(createProcessingRadio(key, 'mode'));
     div.appendChild(createProcessingLabel(key, 'mode', '最頻値'));
+    div.appendChild(createProcessingRadio(key, 'dele'));
+    div.appendChild(createProcessingLabel(key, 'dele', '削除'));
+
+
+    return div
+
+}
+
+const creatIntMenu = (key) => {
+
+    const div = document.createElement('div');
+    div.setAttribute('id', 'null_' + key);
+    // div.setAttribute('style', 'display: none');
+
+    div.appendChild(createProcessingRadio(key, 'mode'));
+    div.appendChild(createProcessingLabel(key, 'mode', '最頻値'));
+    div.appendChild(createProcessingRadio(key, 'med'));
+    div.appendChild(createProcessingLabel(key, 'med', '中央値'));
+    div.appendChild(createProcessingRadio(key, 'ave'));
+    div.appendChild(createProcessingLabel(key, 'ave', '平均値'));
+    div.appendChild(createProcessingRadio(key, 'standard'));
+    div.appendChild(createProcessingLabel(key, 'standard', '標準偏差'));
+    div.appendChild(createProcessingRadio(key, 'dele'));
+    div.appendChild(createProcessingLabel(key, 'dele', '削除'));
 
     return div
 
