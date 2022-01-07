@@ -241,3 +241,46 @@ const createProcessingLabel = (key, value, labelName) => {
 
     return label;
 }
+
+const creatModelMenu = () => {
+
+    const wrapper = document.getElementById('wrapper');
+
+    const modelMenuId = 'model_menu';
+
+    removeElement(modelMenuId);
+
+    const modelMenu = document.createElement('div');
+    modelMenu.setAttribute("id", modelMenuId);
+
+    const select = document.createElement('select');
+    select.setAttribute('name', 'model');
+    select.setAttribute('id', 'model');
+
+    // 最初に表示される選択肢
+    const defaultOption = document.createElement('option');
+    const defaultLabel = document.createElement("label");
+    defaultOption.setAttribute("value", "");
+    defaultLabel.innerHTML = "モデルを選択してください";
+    defaultOption.appendChild(defaultLabel);
+    select.appendChild(defaultOption);
+
+    const modelList = ['RandomForestClassifier', 'RandomForestRegressor', 'XGBoost'];
+
+    // modelListの内容をselectに加える
+    for (let i = 0; i < modelList.length; i++) {
+
+        const option = document.createElement('option');
+        const label = document.createElement("label");
+        option.setAttribute("value", modelList[i]);
+        option.setAttribute("name", "model");
+        label.innerHTML = modelList[i];
+        option.appendChild(label);
+        select.appendChild(option);
+
+    }
+
+    modelMenu.appendChild(select);
+    wrapper.appendChild(modelMenu);
+
+}

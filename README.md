@@ -26,16 +26,7 @@ tensorflow 2.4.1
 # Installation
 
 ```bash
-pip install Python  
-pip install Flask  
-pip install wrapt-timeout-decorator  
-pip install numpy  
-pip install matplotlib  
-pip install seaborn  
-pip install sklearn  
-pip install keras  
-pip install xgboost  
-pip install tensorflow  
+pip install -r requirements.txt
 ```
 # Usage
 
