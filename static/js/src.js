@@ -38,24 +38,32 @@ const alertSelect = () => {
 }
 
 
+// 引数のidの要素が存在する場合、削除する
+const removeElement = (id) => {
+
+    if (document.getElementById(id)) {
+
+        const element = document.getElementById(id);
+        element.remove();
+
+    }
+
+}
+
+
 const createTargetMenu = (columns) => {
 
     // 親のdivを呼び出し
     const wrapper = document.getElementById('wrapper');
 
+    const targetMenuId = 'target_menu';
+
     // target_menuが作られている場合には削除する
-    if (document.getElementById('target_menu')) {
-
-        const targetMenu = document.getElementById('target_menu');
-        for (let i = targetMenu.childNodes.length - 1; i >= 0; i--) {
-            targetMenu.removeChild(targetMenu.childNodes[i]);
-        }
-
-    }
+    removeElement(targetMenuId);
 
     // target_menuを作成
     const targetMenu = document.createElement('div');
-    targetMenu.setAttribute('id', 'target_menu')
+    targetMenu.setAttribute('id', targetMenuId);
 
     // selectを作成、カラムはここで表示する
     const select = document.createElement('select');

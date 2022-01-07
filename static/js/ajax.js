@@ -23,6 +23,8 @@ const sampleHandler = (file) => {
 
             createTargetMenu(Object.keys(columns));
 
+            Swal.close();
+
 
         } else {
 
