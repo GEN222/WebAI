@@ -17,7 +17,12 @@ const sampleHandler = (file) => {
 
         if (result == "0") {
 
-            console.log(result);
+            // POSTリクエストの結果を受け取ってHTMLを書き換える
+            const columns = JSON.parse(data.values).columns;
+            const nullColumns = JSON.parse(data.values).null_columns;
+
+            console.log(columns);
+            console.log(nullColumns);
 
 
         } else {
