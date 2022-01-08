@@ -56,3 +56,29 @@ const creatXGraphMenu = (values) => {
     wrapper.appendChild(xGraphMenu);
 
 }
+
+
+const creatYGraphMenu = (values) => {
+
+    const wrapper = document.getElementById('wrapper');
+
+    const yGraphMenuId = 'y_graph_menu';
+    removeElement(yGraphMenuId);
+
+    const yGraphMenu = document.createElement('div');
+    yGraphMenu.setAttribute("id", yGraphMenuId);
+
+    const select = document.createElement('select');
+    select.setAttribute('name', 'y');
+    select.appendChild(createOption('default', 'Y軸の要素を選んでください'));
+
+    for (let i = 0; i < values.length; i++) {
+
+        select.appendChild(createOption(values[i], values[i]));
+
+    }
+
+    yGraphMenu.appendChild(select);
+    wrapper.appendChild(yGraphMenu);
+
+}
