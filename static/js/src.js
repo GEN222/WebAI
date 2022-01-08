@@ -25,6 +25,7 @@ const createContent = () => {
     imageArea.setAttribute('id', imageAreaId);
     content.appendChild(imageArea);
 
+
     wrapper.appendChild(content);
 
 }
