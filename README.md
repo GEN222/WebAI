@@ -10,18 +10,7 @@ Data visualization is also available, so you can train your model while thinking
 
 # Requirement
 
-Python 3.7.4  
-Flask 1.1.1  
-Wekzeug 1.0.0  
-wrapt-timeout-decorator 1.3.1  
-json5 0.9.1  
-numpy 1.19.5  
-matplotlib 3.1.3  
-seaborn 0.11.2  
-sklearn 0.0  
-keras 2.4.3  
-xgboost 1.4.1  
-tensorflow 2.4.1  
+Please check requirements.txt
 
 # Installation
 
