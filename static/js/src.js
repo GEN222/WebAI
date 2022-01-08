@@ -102,22 +102,13 @@ const createNullMenu = (nullColumns) => {
         select.onchange = function () {
             switchRadioMenus(this.value, keys);
         };
-
-        const defaultOption = document.createElement('option');
-        const defaultLabel = document.createElement('label');
-        defaultOption.setAttribute('value', '');
-        defaultLabel.innerHTML = '欠損値を選択してください';
-        defaultOption.appendChild(defaultLabel);
-        select.appendChild(defaultOption);
+        select.appendChild(createOption('default', '欠損値を選択してください'));
 
         nullMenu.appendChild(select);
 
         for (let i = 0; i < keys.length; i++) {
 
-            const option = document.createElement('option');
-            option.setAttribute('value', keys[i]);
-            option.innerHTML = keys[i] + ' : 欠損数/' + nullColumns[keys[i]][0] + '個(' + nullColumns[keys[i]][2] + '%)';
-            select.appendChild(option);
+            select.appendChild(createOption(keys[i], keys[i] + ' : 欠損数/' + nullColumns[keys[i]][0] + '個(' + nullColumns[keys[i]][2] + '%)'));
             nullMenu.appendChild(createRadioMenu(keys[i], nullColumns));
 
         }
