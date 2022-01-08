@@ -28,7 +28,8 @@ const sampleHandler = (file) => {
             creatSubmitButton();
             createImgMenu();
 
-            createGraphMenu(Object.keys(columns));
+            createGraphMenu();
+            creatXGraphMenu(Object.keys(columns));
 
             Swal.close();
 

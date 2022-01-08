@@ -1,7 +1,7 @@
 
 
 // グラフのメニュー作成
-const createGraphMenu = (values) => {
+const createGraphMenu = () => {
 
     const wrapper = document.getElementById('wrapper');
 
@@ -14,7 +14,7 @@ const createGraphMenu = (values) => {
 
     const select = document.createElement('select');
     select.setAttribute('name', 'kinds');
-    select.onchange = function () { creatXGraphMenu(values) };
+    // select.onchange = function () { creatXGraphMenu(values) };
     select.appendChild(createOption('default', 'グラフの種類を選んでください'));
 
     const kinds_options_html = ['棒グラフ(1要素)', '棒グラフ(2要素)', '散布図', '可視分布', 'ヒストグラム'];
