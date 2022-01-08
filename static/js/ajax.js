@@ -62,6 +62,8 @@ const paramHandler = () => {
 
     const formData = new FormData(document.getElementById("upload_form"));
 
+    const plot = document.getElementById('plot_graph');
+
     // 学習中を終了まで表示
     Swal.fire({
         title: '学習中・・・',
@@ -97,6 +99,7 @@ const paramHandler = () => {
 
             // 学習結果を画像で表示
             const img_data = JSON.parse(data.values).img_data;
+            plot.src = "data:image/png:base64," + img_data;
 
             Swal.fire({
                 title: '学習結果',
