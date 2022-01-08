@@ -256,7 +256,7 @@ const createDeleMenu = (values) => {
     wrapper.appendChild(deleMenu);
 }
 
-const creatSubmitButton = () => {
+const createSubmitButton = () => {
 
     const wrapper = document.getElementById('wrapper');
     const subBtnId = 'sub_btn';

@@ -60,7 +60,7 @@ const switchGraphMenus = (kinds) => {
 }
 
 
-const creatXGraphMenu = (values) => {
+const createXGraphMenu = (values) => {
 
     const wrapper = document.getElementById('wrapper');
 
@@ -87,7 +87,7 @@ const creatXGraphMenu = (values) => {
 }
 
 
-const creatYGraphMenu = (values) => {
+const createYGraphMenu = (values) => {
 
     const wrapper = document.getElementById('wrapper');
 

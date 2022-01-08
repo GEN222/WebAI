@@ -23,14 +23,14 @@ const sampleHandler = (file) => {
 
             createTargetMenu(Object.keys(columns));
             createNullMenu(nullColumns);
-            creatModelMenu();
+            createModelMenu();
             createDeleMenu(Object.keys(columns));
-            creatSubmitButton();
+            createSubmitButton();
             createImgMenu();
 
             createGraphMenu();
-            creatXGraphMenu(Object.keys(columns));
-            creatYGraphMenu(Object.keys(columns));
+            createXGraphMenu(Object.keys(columns));
+            createYGraphMenu(Object.keys(columns));
             createGraphButton();
 
             Swal.close();

@@ -1,5 +1,5 @@
 
-const creatModelMenu = () => {
+const createModelMenu = () => {
 
     const wrapper = document.getElementById('wrapper');
 
@@ -15,7 +15,7 @@ const creatModelMenu = () => {
     select.setAttribute('id', 'model');
     select.onchange = function () {
         // モデルに応じて表示するパラメータを変更
-        creatModelParamMenu(this);
+        createModelParamMenu(this);
     }
 
     // 最初に表示される選択肢
@@ -37,7 +37,7 @@ const creatModelMenu = () => {
 
 
 // モデルのハイパーパラメータを表示
-const creatModelParamMenu = (model) => {
+const createModelParamMenu = (model) => {
 
     const modelMenu = document.getElementById("model_menu");
 
