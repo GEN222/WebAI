@@ -43,6 +43,58 @@ const creatModelMenu = () => {
 }
 
 
+// モデルのハイパーパラメータを表示
+const creatModelParamMenu = (model) => {
+
+    const wrapper = document.getElementById("wrapper");
+
+    const modelParamMenuId = 'model_param_menu';
+
+    removeElement(modelParamMenuId);
+
+    const modelParamMenu = document.createElement('div');
+    modelParamMenu.setAttribute('id', modelParamMenuId);
+
+    const ul = document.createElement('ul');
+
+    if (model.value == 'RandomForestClassifier') {
+
+        modelParams = getRandomForestClassifierParams();
+
+        for (let i = 0; i < modelParams.length; i++) {
+            ul.appendChild(modelParams[i])
+        }
+
+        parametersArea.appendChild(createPushMessage('パラメータを選択してください', ul_id));
+        modelParamMenu.appendChild(ul);
+
+    } else if (model.value == "RandomForestRegressor") {
+
+        modelParams = getRandomForestRegressorParams();
+
+        for (let i = 0; i < modelParams.length; i++) {
+            ul.appendChild(modelParams[i])
+        }
+
+        parametersArea.appendChild(createPushMessage("パラメータを選択してください", ul_id));
+        modelParamMenu.appendChild(ul);
+
+    } else if (model.value == "XGBoost") {
+
+        modelParams = getXGBoostParams();
+
+        for (let i = 0; i < modelParams.length; i++) {
+            ul.appendChild(modelParams[i])
+        }
+
+        parametersArea.appendChild(createPushMessage("パラメータを選択してください", ul_id));
+        modelParamMenu.appendChild(ul);
+    }
+
+    wrapper.appendChild(modelParamMenu);
+}
+
+
 //-----------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------
 //---------modelパラメーターのみ可読性のために変数規則をスネークケースにしています！！---------
