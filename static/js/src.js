@@ -305,3 +305,8 @@ const creatSubmitButton = () => {
     wrapper.appendChild(subBtnMenu);
 
 }
+
+
+const createImgArea = () => {
+    console.log('done');
+}
