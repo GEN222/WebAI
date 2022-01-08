@@ -1,5 +1,5 @@
 
-
+// content作成
 const createContent = () => {
 
     const contentId = 'content';
@@ -41,6 +41,7 @@ const alertSelect = () => {
     const select = document.createElement('select');
     select.onchange = function () {
         sampleHandler(this.value);
+        displayFileName(this.value);
     };
     select.appendChild(createOption('default', 'サンプルを選択してください'));
 
@@ -57,6 +58,15 @@ const alertSelect = () => {
         html: div,
         confirmButtonColor: '#384878'
     })
+
+}
+
+
+// ファイルの名前を表示
+const displayFileName = (filename) => {
+
+    const fileNameArea = document.getElementById('file_name');
+    fileNameArea.innerHTML = filename;
 
 }
 

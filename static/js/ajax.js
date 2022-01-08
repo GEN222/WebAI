@@ -40,6 +40,11 @@ const sampleHandler = (file) => {
 
         } else {
 
+            // contentエリアを作成することで疑似的に削除
+            createContent();
+            // ファイル名を変更する
+            displayFileName('ファイルの読み込みに失敗しました');
+
             Swal.fire({
                 icon: 'error',
                 title: 'ファイル取得失敗',
@@ -51,6 +56,8 @@ const sampleHandler = (file) => {
 
     }).fail(function (data) {
         console.log('Ajax通信 失敗');
+
+        displayFileName('ファイルの読み込みに失敗しました');
 
         Swal.fire({
             icon: 'error',
