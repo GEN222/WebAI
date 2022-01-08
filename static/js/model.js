@@ -13,6 +13,10 @@ const creatModelMenu = () => {
     const select = document.createElement('select');
     select.setAttribute('name', 'model');
     select.setAttribute('id', 'model');
+    select.onchange = function () {
+        // モデルに応じて表示するパラメータを変更
+        creatModelParamMenu(this);
+    }
 
     // 最初に表示される選択肢
     const defaultOption = document.createElement('option');
@@ -65,7 +69,6 @@ const creatModelParamMenu = (model) => {
             ul.appendChild(modelParams[i])
         }
 
-        parametersArea.appendChild(createPushMessage('パラメータを選択してください', ul_id));
         modelParamMenu.appendChild(ul);
 
     } else if (model.value == "RandomForestRegressor") {
@@ -76,7 +79,6 @@ const creatModelParamMenu = (model) => {
             ul.appendChild(modelParams[i])
         }
 
-        parametersArea.appendChild(createPushMessage("パラメータを選択してください", ul_id));
         modelParamMenu.appendChild(ul);
 
     } else if (model.value == "XGBoost") {
@@ -87,7 +89,6 @@ const creatModelParamMenu = (model) => {
             ul.appendChild(modelParams[i])
         }
 
-        parametersArea.appendChild(createPushMessage("パラメータを選択してください", ul_id));
         modelParamMenu.appendChild(ul);
     }
 
