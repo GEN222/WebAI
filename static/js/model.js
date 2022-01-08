@@ -50,7 +50,7 @@ const creatModelMenu = () => {
 // モデルのハイパーパラメータを表示
 const creatModelParamMenu = (model) => {
 
-    const wrapper = document.getElementById("wrapper");
+    const modelMenu = document.getElementById("model_menu");
 
     const modelParamMenuId = 'model_param_menu';
 
@@ -92,7 +92,7 @@ const creatModelParamMenu = (model) => {
         modelParamMenu.appendChild(ul);
     }
 
-    wrapper.appendChild(modelParamMenu);
+    modelMenu.appendChild(modelParamMenu);
 }
 
 

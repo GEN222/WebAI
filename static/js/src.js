@@ -246,6 +246,39 @@ const createProcessingLabel = (key, value, labelName) => {
 }
 
 
-const createDeleMenu = () => {
-    console.log('done');
+const createDeleMenu = (values) => {
+
+    const wrapper = document.getElementById('wrapper');
+    const deleMenuId = 'dele_menu';
+
+    removeElement(deleMenuId);
+
+    const deleMenu = document.createElement('div');
+    deleMenu.setAttribute('id', deleMenuId);
+
+    const ul = document.createElement('ul');
+
+    for (var i = 0; i < values.length; i++) {
+        const li = document.createElement('li');
+        const input = document.createElement('input');
+        const label = document.createElement('label');
+        const br = document.createElement('br');
+        const value = values[i];
+        const id = 'dele_parameters_area_' + value;
+        const name = 'dele_param';
+        input.setAttribute('type', 'checkbox');
+        input.setAttribute('value', value);
+        input.setAttribute('id', id);
+        input.setAttribute('name', name);
+        label.setAttribute('for', id);
+        label.innerHTML = value;
+
+        label.appendChild(input);
+        li.appendChild(label);
+
+        ul.appendChild(li);
+    }
+
+    deleMenu.appendChild(ul);
+    wrapper.appendChild(deleMenu);
 }
