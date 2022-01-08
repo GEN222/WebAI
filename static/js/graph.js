@@ -116,6 +116,20 @@ const createYGraphMenu = (values) => {
 
 const createGraphButton = () => {
 
-    console.log('done');
+    const wrapper = document.getElementById('wrapper');
+    const graphBtnId = 'graph_btn';
+
+    removeElement(graphBtnId);
+
+    const graphBtnMenu = document.createElement('div');
+    graphBtnMenu.setAttribute('id', graphBtnId)
+
+    const button = document.createElement('button');
+    button.setAttribute('type', 'submit');
+    button.setAttribute('class', 'btn');
+    button.innerHTML = '学習させる';
+
+    graphBtnMenu.appendChild(button);
+    wrapper.appendChild(graphBtnMenu);
 
 }
