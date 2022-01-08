@@ -28,26 +28,26 @@
     <form id='upload_form' onsubmit='return false;'>
 
       <div id = 'wrapper'>
-      <div id='file_form' class = 'file_form'>
+        <div id='header' class = 'file_form'>
 
-        <button class='btn'>
-          <label for='file_upload'>
-            ファイルをアップロード
-          </label>
-          <input id = 'file_upload' name='upfile' type='file' accept='.xlsx,.csv' class='btn'>
-        </button>
+          <button class='btn'>
+            <label for='file_upload'>
+              ファイルをアップロード
+            </label>
+            <input id = 'file_upload' name='upfile' type='file' accept='.xlsx,.csv' class='btn'>
+          </button>
 
-        <button class='btn' onclick='alertSelect();'>
-          <label>　サンプルを使用する　</label>
-        </button>
+          <button class='btn' onclick='alertSelect();'>
+            <label>　サンプルを使用する　</label>
+          </button>
 
-        <p id = 'file_name'  class = 'csv_message'>選択されていません</p>
+          <p id = 'file_name'  class = 'csv_message'>選択されていません</p>
 
-        <input type='text' id = 'save_file_name' name = 'file_name' style='display: none;'>
+          <input type='text' id = 'save_file_name' name = 'file_name' style='display: none;'>
 
-      </div><!-- file_form -->
+        </div><!-- header -->
 
-  </div><!-- wrapper -->
+      </div><!-- wrapper -->
 
     </form>
 
