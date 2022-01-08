@@ -5,7 +5,6 @@ const alertSelect = () => {
     const values = ['boston.csv', 'titanic.csv', 'dummy.csv'];
 
     const div = document.createElement('div');
-    div.setAttribute('class', 'cp_ipselect cp_sl01');
 
     const select = document.createElement('select');
     select.setAttribute('onchange', 'sampleHandler(this.value);')
@@ -330,5 +329,15 @@ const createImgMenu = () => {
 }
 
 const alertImage = () => {
-    console.log('done');
+
+    const img = document.getElementById('plot_graph');
+    const src = img.src;
+
+    Swal.fire({
+        title: 'グラフ結果',
+        imageUrl: src,
+        imageAlt: 'Custom image',
+        confirmButtonColor: '#384878'
+    })
+
 }
