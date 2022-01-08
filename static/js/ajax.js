@@ -12,10 +12,12 @@ const sampleHandler = (file) => {
 
     }).done(function (data) { // 成功した場合実行される
         console.log('Ajax通信 成功');
-
         const result = JSON.parse(data.values).result;
 
         if (result == '0') {
+
+            // contentエリアを作成
+            createContent();
 
             // POSTリクエストの結果を受け取ってHTMLを書き換える
             const columns = JSON.parse(data.values).columns;

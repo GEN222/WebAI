@@ -1,4 +1,35 @@
 
+
+const createContent = () => {
+
+    const contentId = 'content';
+    removeElement(contentId);
+
+    const wrapper = document.getElementById('wrapper');
+
+    const content = document.createElement('div');
+    content.setAttribute('id', contentId);
+
+    const paramArea = document.createElement('div');
+    const paramAreaId = 'param_area';
+    paramArea.setAttribute('id', paramAreaId);
+    content.appendChild(paramArea);
+
+    const graphArea = document.createElement('div');
+    const graphAreaId = 'graph_area';
+    graphArea.setAttribute('id', graphAreaId);
+    content.appendChild(graphArea);
+
+    const imageArea = document.createElement('div');
+    const imageAreaId = 'image_area';
+    imageArea.setAttribute('id', imageAreaId);
+    content.appendChild(imageArea);
+
+    wrapper.appendChild(content);
+
+}
+
+
 // サンプル選択時のアラート内のselect表示
 const alertSelect = () => {
 
