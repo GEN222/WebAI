@@ -284,5 +284,24 @@ const createDeleMenu = (values) => {
 }
 
 const creatSubmitButton = () => {
-    console.log('done');
+
+    const wrapper = document.getElementById('wrapper');
+    const subBtnId = 'sub_btn';
+
+    removeElement(subBtnId);
+
+    const subBtnMenu = document.createElement('div');
+    subBtnMenu.setAttribute('id', subBtnId)
+
+    const button = document.createElement('button');
+    button.setAttribute('type', 'submit');
+    button.onchange = function () {
+        // paramHandler();
+    };
+    button.setAttribute('class', 'btn');
+    button.innerHTML = '学習させる';
+
+    subBtnMenu.appendChild(button);
+    wrapper.appendChild(subBtnMenu);
+
 }
