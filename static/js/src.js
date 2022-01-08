@@ -295,8 +295,8 @@ const creatSubmitButton = () => {
 
     const button = document.createElement('button');
     button.setAttribute('type', 'submit');
-    button.onchange = function () {
-        // paramHandler();
+    button.onclick = function () {
+        paramHandler();
     };
     button.setAttribute('class', 'btn');
     button.innerHTML = '学習させる';
