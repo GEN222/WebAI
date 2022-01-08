@@ -320,8 +320,15 @@ const createImgMenu = () => {
     const img = document.createElement('img');
     const imgId = 'plot_graph';
     img.setAttribute('id', imgId);
+    img.onclick = function () {
+        alertImage();
+    };
 
     imgMenu.appendChild(img);
     wrapper.appendChild(imgMenu);
 
+}
+
+const alertImage = () => {
+    console.log('done');
 }
