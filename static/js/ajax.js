@@ -125,3 +125,11 @@ const paramHandler = () => {
 
     });
 }
+
+
+// グラフ表示時
+const graphHandler = () => {
+
+    console.log('done');
+
+}

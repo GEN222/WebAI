@@ -126,6 +126,9 @@ const createGraphButton = () => {
 
     const button = document.createElement('button');
     button.setAttribute('type', 'submit');
+    button.onclick = function () {
+        graphHandler();
+    };
     button.setAttribute('class', 'btn');
     button.innerHTML = '学習させる';
 
