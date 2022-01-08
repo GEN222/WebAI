@@ -19,25 +19,14 @@ const creatModelMenu = () => {
     }
 
     // 最初に表示される選択肢
-    const defaultOption = document.createElement('option');
-    const defaultLabel = document.createElement('label');
-    defaultOption.setAttribute('value', '');
-    defaultLabel.innerHTML = 'モデルを選択してください';
-    defaultOption.appendChild(defaultLabel);
-    select.appendChild(defaultOption);
+    select.appendChild(createOption('default', 'モデルを選択してください'));
 
     const modelList = ['RandomForestClassifier', 'RandomForestRegressor', 'XGBoost'];
 
     // modelListの内容をselectに加える
     for (let i = 0; i < modelList.length; i++) {
 
-        const option = document.createElement('option');
-        const label = document.createElement('label');
-        option.setAttribute('value', modelList[i]);
-        option.setAttribute('name', 'model');
-        label.innerHTML = modelList[i];
-        option.appendChild(label);
-        select.appendChild(option);
+        select.appendChild(createOption(modelList[i], modelList[i]));
 
     }
 
