@@ -21,7 +21,7 @@ const createGraphMenu = () => {
 
     for (let i = 0; i < kinds_options_html.length; i++) {
 
-        select.appendChild(creatOption(kinds_options_value[i], kinds_options_html[i]));
+        select.appendChild(createOption(kinds_options_value[i], kinds_options_html[i]));
 
     }
 

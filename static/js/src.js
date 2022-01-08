@@ -7,22 +7,14 @@ const alertSelect = () => {
     const div = document.createElement('div');
 
     const select = document.createElement('select');
-    select.setAttribute('onchange', 'sampleHandler(this.value);')
-
-    const defaultOption = document.createElement('option');
-    const defaultLabel = document.createElement('label');
-    defaultOption.setAttribute('value', '');
-    defaultLabel.innerHTML = 'サンプルを選択してください';
-    defaultOption.appendChild(defaultLabel);
-    select.appendChild(defaultOption);
+    select.onchange = function () {
+        sampleHandler(this.value);
+    };
+    select.appendChild(createOption('default', 'サンプルを選択してください'));
 
     for (let i = 0; i < values.length; i++) {
 
-        const option = document.createElement('option');
-        option.setAttribute('value', values[i]);
-        option.innerHTML = values[i];
-
-        select.appendChild(option);
+        select.appendChild(createOption(values[i], values[i]));
 
     }
 
