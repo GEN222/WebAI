@@ -61,21 +61,12 @@ const createTargetMenu = (columns) => {
     select.setAttribute('name', 'target');
 
     // defaultの表示だけ作成
-    const defaultOption = document.createElement('option');
-    const defaultLabel = document.createElement('label');
-    defaultOption.setAttribute('value', '');
-    defaultLabel.innerHTML = '目的変数を選択してください';
-    defaultOption.appendChild(defaultLabel);
-    select.appendChild(defaultOption);
+    select.appendChild(createOption('default', '目的変数を選択してください'));
 
     // カラムをselectに追加
     for (let i = 0; i < columns.length; i++) {
 
-        const option = document.createElement('option');
-        option.setAttribute('value', columns[i]);
-        option.innerHTML = columns[i];
-
-        select.appendChild(option);
+        select.appendChild(createOption(columns[i], columns[i]));
 
     }
 
