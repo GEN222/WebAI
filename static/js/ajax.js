@@ -65,7 +65,6 @@ const sampleHandler = (file) => {
 const paramHandler = () => {
 
     const formData = new FormData(document.getElementById("upload_form"));
-
     const plot = document.getElementById('plot_graph');
 
     // 学習中を終了まで表示
@@ -130,6 +129,67 @@ const paramHandler = () => {
 // グラフ表示時
 const graphHandler = () => {
 
-    console.log('done');
+    const formData = new FormData(document.getElementById("upload_form"));
+    const plot = document.getElementById('plot_graph');
+
+    Swal.fire({
+        title: 'グラフの準備中・・・',
+        allowOutsideClick: false
+    });
+
+    swal.showLoading();
+
+    $.ajax("/plot", {
+
+        type: "post",
+        data: formData, // POSTでサーバーに送信するデータ
+        processData: false,
+        contentType: false,
+        dataType: "json",
+
+    }).done(function (data) { // 成功した場合実行される
+        console.log("Ajax通信 成功");
+
+        const result = JSON.parse(data.values).result
+        const img_data = JSON.parse(data.values).img_data
+
+        if (result == "0") {
+
+            plot.src = "data:image/png:base64," + img_data;
+
+            Swal.fire({
+                title: 'グラフ結果',
+                imageUrl: "data:image/png:base64," + img_data,
+                // imageAlt: 'Custom image',
+                confirmButtonColor: '#384878'
+            })
+
+        } else if (result == "-1") {
+
+            const message = 'Webデータを受け取ることができませんでした<br>ページを読み込みなおして再度実行してください';
+
+            Swal.fire({
+                icon: 'error',
+                title: 'データが取得できませんでした',
+                html: message,
+                confirmButtonColor: '#384878'
+            });
+
+        } else if (result == "-2") {
+
+            const message = 'グラフ表示がタイムアウト処理されました<br>適切なグラフを選択してください';
+
+            Swal.fire({
+                icon: 'error',
+                title: 'タイムアウトしました！',
+                html: message,
+                confirmButtonColor: '#384878'
+            });
+
+        }
+
+    }).fail(function (data) { // 失敗した場合実行される
+        console.log("Ajax通信 失敗");
+    });
 
 }
