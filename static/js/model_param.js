@@ -180,3 +180,96 @@ const getRandomForestRegressorParams = () => {
     return [td1, td2, td3, td4, td5];
 }
 
+
+
+//-----------------------------------------------------------------
+//XGBoost
+//https://xgboost.readthedocs.io/en/latest/parameter.html
+//https://qiita.com/FJyusk56/items/0649f4362587261bd57a
+
+const getXGBoostParams = () => {
+
+    //max_depth
+    let td1 = document.createElement('li');
+    let max_depth_xgb_label = document.createElement('label');
+    let max_depth_xgb = document.createElement('input');
+    max_depth_xgb.setAttribute('name', 'model_param_1');
+    max_depth_xgb.setAttribute('id', 'model_param_1');
+    max_depth_xgb.setAttribute('type', 'number');
+    max_depth_xgb.setAttribute('value', '6');
+    max_depth_xgb.setAttribute('max', '1000');
+    max_depth_xgb.setAttribute('min', '0');
+    max_depth_xgb_label.innerHTML = 'max_depth';
+    max_depth_xgb_label.setAttribute('for', 'model_param_1');
+    td1.appendChild(max_depth_xgb_label);
+    td1.appendChild(max_depth_xgb);
+
+    //eta
+    let td2 = document.createElement('li');
+    let eta_xgb_label = document.createElement('label');
+    let eta_xgb = document.createElement('input');
+    eta_xgb.setAttribute('step', '0.1');
+    eta_xgb.setAttribute('name', 'model_param_2');
+    eta_xgb.setAttribute('id', 'model_param_2');
+    eta_xgb.setAttribute('type', 'number');
+    eta_xgb.setAttribute('value', '0.3');
+    eta_xgb.setAttribute('max', '1');
+    eta_xgb.setAttribute('min', '0');
+    eta_xgb_label.innerHTML = 'learning_rate';
+    eta_xgb_label.setAttribute('for', 'model_param_2');
+    td2.appendChild(eta_xgb_label);
+    td2.appendChild(eta_xgb);
+
+    //objective
+    let td3 = document.createElement('li');
+    let objective_xgb_label = document.createElement('label');
+    let objective_xgb = document.createElement('select');
+    let linear = document.createElement('option');
+    let softmax = document.createElement('option');
+    objective_xgb.setAttribute('id', 'model_param_3');
+    linear.setAttribute('value', 'Regressor');
+    linear.appendChild(document.createTextNode('Regressor'));
+    softmax.setAttribute('value', 'Classifier');
+    softmax.appendChild(document.createTextNode('Classifier'));
+    objective_xgb_label.innerHTML = 'objective';
+    objective_xgb_label.setAttribute('for', 'model_param_3');
+    objective_xgb.setAttribute('name', 'model_param_3');
+    objective_xgb.appendChild(linear);
+    objective_xgb.appendChild(softmax);
+    td3.appendChild(objective_xgb_label);
+    td3.appendChild(objective_xgb);
+
+    //num_round
+    let td4 = document.createElement('li');
+    let num_round_xgb_label = document.createElement('label');
+    let num_round_xgb = document.createElement('input');
+    num_round_xgb.setAttribute('name', 'model_param_4');
+    num_round_xgb.setAttribute('id', 'model_param_4');
+    num_round_xgb.setAttribute('type', 'number');
+    num_round_xgb.setAttribute('value', '10');
+    num_round_xgb.setAttribute('max', '100');
+    num_round_xgb.setAttribute('min', '1');
+    num_round_xgb_label.innerHTML = 'num_round';
+    num_round_xgb_label.setAttribute('for', 'model_param_4');
+    td4.appendChild(num_round_xgb_label);
+    td4.appendChild(num_round_xgb);
+
+    // subsample
+    let td5 = document.createElement('li');
+    let subsample_label = document.createElement('label');
+    let subsample = document.createElement('input');
+    subsample.setAttribute('step', '0.1');
+    subsample.setAttribute('name', 'model_param_5');
+    subsample.setAttribute('id', 'model_param_5');
+    subsample.setAttribute('type', 'number');
+    subsample.setAttribute('value', '0.3');
+    subsample.setAttribute('max', '1');
+    subsample.setAttribute('min', '0');
+    subsample_label.innerHTML = 'subsample';
+    subsample_label.setAttribute('for', 'model_param_5');
+    td5.appendChild(subsample_label);
+    td5.appendChild(subsample);
+
+
+    return [td1, td2, td3, td4, td5];
+}
