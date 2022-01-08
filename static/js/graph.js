@@ -14,7 +14,7 @@ const createGraphMenu = () => {
 
     const select = document.createElement('select');
     select.setAttribute('name', 'kinds');
-    select.onchange = function () { switchGraphMenu(this.value) };
+    select.onchange = function () { switchGraphMenus(this.value) };
     select.appendChild(createOption('default', 'グラフの種類を選んでください'));
 
     const kinds_options_html = ['棒グラフ(1要素)', '棒グラフ(2要素)', '散布図', '可視分布', 'ヒストグラム'];
@@ -32,9 +32,23 @@ const createGraphMenu = () => {
 }
 
 
-const switchGraphMenu = (value) => {
+const switchGraphMenus = (kinds) => {
 
-    console.log(value);
+    const two_value_kinds = ['count2', 'reg', 'swarm'];
+
+    if (two_value_kinds.includes(kinds)) {
+
+        const xGraph = document.getElementById('x_graph_menu');
+        const yGraph = document.getElementById('y_graph_menu');
+        xGraph.style.display = '';
+        yGraph.style.display = '';
+
+    } else {
+
+        const yGraph = document.getElementById('y_graph_menu');
+        yGraph.style.display = 'none';
+
+    }
 
 }
 
