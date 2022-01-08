@@ -308,5 +308,20 @@ const creatSubmitButton = () => {
 
 
 const createImgArea = () => {
-    console.log('done');
+
+    const wrapper = document.getElementById('wrapper');
+
+    const imgMenuId = 'img_menu';
+    removeElement(imgMenuId);
+
+    const imgMenu = document.createElement('div');
+    imgMenu.setAttribute('id', imgMenuId);
+
+    const img = document.createElement('img');
+    const imgId = 'plot_graph';
+    img.setAttribute('id', imgId);
+
+    imgMenu.appendChild(img);
+    wrapper.appendChild(imgMenu);
+
 }
