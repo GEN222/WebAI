@@ -142,6 +142,9 @@ const createNullMenu = (nullColumns) => {
 
         wrapper.appendChild(nullMenu);
 
+    } else {
+        // 欠損値がない場合にはメニューを削除
+        removeElement('null_menu');
     }
 
 }
