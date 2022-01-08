@@ -25,6 +25,7 @@ const sampleHandler = (file) => {
             createNullMenu(nullColumns);
 
             creatModelMenu();
+            createDeleMenu();
 
             Swal.close();
 

@@ -245,3 +245,7 @@ const createProcessingLabel = (key, value, labelName) => {
     return label;
 }
 
+
+const createDeleMenu = () => {
+    console.log('done');
+}
