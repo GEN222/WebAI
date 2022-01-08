@@ -112,3 +112,10 @@ const creatYGraphMenu = (values) => {
     wrapper.appendChild(yGraphMenu);
 
 }
+
+
+const createGraphButton = () => {
+
+    console.log('done');
+
+}

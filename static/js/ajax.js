@@ -31,6 +31,7 @@ const sampleHandler = (file) => {
             createGraphMenu();
             creatXGraphMenu(Object.keys(columns));
             creatYGraphMenu(Object.keys(columns));
+            createGraphButton();
 
             Swal.close();
 
