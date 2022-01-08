@@ -43,11 +43,18 @@ const switchGraphMenus = (kinds) => {
         xGraph.style.display = '';
         yGraph.style.display = '';
 
-    } else {
+    } else if (kinds == 'default') {
 
+        const xGraph = document.getElementById('x_graph_menu');
         const yGraph = document.getElementById('y_graph_menu');
+        xGraph.style.display = 'none';
         yGraph.style.display = 'none';
 
+    } else {
+        const xGraph = document.getElementById('x_graph_menu');
+        const yGraph = document.getElementById('y_graph_menu');
+        xGraph.style.display = '';
+        yGraph.style.display = 'none';
     }
 
 }
@@ -61,7 +68,8 @@ const creatXGraphMenu = (values) => {
     removeElement(xGraphMenuId);
 
     const xGraphMenu = document.createElement('div');
-    xGraphMenu.setAttribute("id", xGraphMenuId);
+    xGraphMenu.setAttribute('id', xGraphMenuId);
+    xGraphMenu.setAttribute('style', 'display: none');
 
     const select = document.createElement('select');
     select.setAttribute('name', 'x');
@@ -87,7 +95,8 @@ const creatYGraphMenu = (values) => {
     removeElement(yGraphMenuId);
 
     const yGraphMenu = document.createElement('div');
-    yGraphMenu.setAttribute("id", yGraphMenuId);
+    yGraphMenu.setAttribute('id', yGraphMenuId);
+    yGraphMenu.setAttribute('style', 'display: none');
 
     const select = document.createElement('select');
     select.setAttribute('name', 'y');
