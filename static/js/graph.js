@@ -130,7 +130,7 @@ const createGraphButton = () => {
         graphHandler();
     };
     button.setAttribute('class', 'btn');
-    button.innerHTML = '学習させる';
+    button.innerHTML = 'グラフ表示';
 
     graphBtnMenu.appendChild(button);
     wrapper.appendChild(graphBtnMenu);
