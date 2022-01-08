@@ -23,11 +23,12 @@ const sampleHandler = (file) => {
 
             createTargetMenu(Object.keys(columns));
             createNullMenu(nullColumns);
-
             creatModelMenu();
             createDeleMenu(Object.keys(columns));
             creatSubmitButton();
             createImgMenu();
+
+            createGraphMenu();
 
             Swal.close();
 
