@@ -1,42 +1,42 @@
 <!-- templates/index.html -->
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang='ja'>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src='https://code.jquery.com/jquery-3.5.1.min.js' integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='//cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 
-  <script src="{{ url_for('static',filename='js/src.js') }}"></script>
-  <script src="{{ url_for('static',filename='js/ajax.js') }}"></script>
+  <script src='{{ url_for('static',filename='js/src.js') }}'></script>
+  <script src='{{ url_for('static',filename='js/ajax.js') }}'></script>
 
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel='stylesheet' href='static/css/style.css'>
 
   <title>WebAI</title>
 
 </head>
 <body>
   
-  <div id = "wrapper">
-    <form id="upload_form" onsubmit="return false;">
-      <div id="file_form" class = "file_form">
-        <button class="btn">
-          <label for="file_upload">
+  <div id = 'wrapper'>
+    <form id='upload_form' onsubmit='return false;'>
+      <div id='file_form' class = 'file_form'>
+        <button class='btn'>
+          <label for='file_upload'>
             ファイルをアップロード
           </label>
-          <input id = "file_upload" name="upfile" type="file" accept=".xlsx,.csv" class="btn">
+          <input id = 'file_upload' name='upfile' type='file' accept='.xlsx,.csv' class='btn'>
         </button>
 
-        <button class="btn" onclick="alertSelect();">
+        <button class='btn' onclick='alertSelect();'>
           <label>　サンプルを使用する　</label>
         </button>
 
-      <p id = "file_name"  class = "csv_message">選択されていません</p>
-      <input type="text" id = "save_file_name" name = "file_name" style="display: none;">
+      <p id = 'file_name'  class = 'csv_message'>選択されていません</p>
+      <input type='text' id = 'save_file_name' name = 'file_name' style='display: none;'>
       
     </div>
     </form>

@@ -52,13 +52,13 @@ def machine_learning(df,target,model,model_param,dele_columns):
 def choose_model(train_data,target_data,model,param):
         
         # モデルに応じて学習
-        if model == "RandomForestClassifier":
+        if model == 'RandomForestClassifier':
                 return RFC(train_data,target_data,param)
 
-        elif model == "RandomForestRegressor":
+        elif model == 'RandomForestRegressor':
                 return RFR(train_data,target_data,param)
 
-        elif model == "XGBoost":
+        elif model == 'XGBoost':
                 return XGB(train_data,target_data,param)
 
 
@@ -91,11 +91,11 @@ def RFC(train_data,target_data,param):
         
         # ValueErrorの場合はモデルの選択を間違えている場合が濃厚
         except ValueError:
-            raise Exception("モデルの選択を間違えています！")
+            raise Exception('モデルの選択を間違えています！')
 
         # それ以外の場合はcsvが学習に適していない,,,など無限に可能性がある
         except Exception as e:
-            raise Exception("学習段階でエラーが出ました！")
+            raise Exception('学習段階でエラーが出ました！')
 
 
 def RFR(train_data,target_data,param):
@@ -114,10 +114,10 @@ def RFR(train_data,target_data,param):
                 return train_sizes,train_scores_mean,test_scores_mean
 
         except ValueError:
-                raise Exception("モデルの選択を間違えています！")
+                raise Exception('モデルの選択を間違えています！')
 
         except Exception as e:
-            raise Exception("学習段階でエラーが出ました！")
+            raise Exception('学習段階でエラーが出ました！')
 
 
 def XGB(train_data,target_data,radio_param):
@@ -126,7 +126,7 @@ def XGB(train_data,target_data,radio_param):
 
         try:
                 # xgbはobjectiveによってモデルを選択
-                if(radio_param[2] == "Regressor"):
+                if(radio_param[2] == 'Regressor'):
 
                         model = xgb.XGBRegressor(
                             max_depth = int(radio_param[0]),learning_rate = float(radio_param[1]),subsample = float(radio_param[4]),eval_metric='mlogloss'
@@ -139,7 +139,7 @@ def XGB(train_data,target_data,radio_param):
 
                         return train_sizes,train_scores_mean,test_scores_mean
 
-                elif(radio_param[2] == "Classifier"):
+                elif(radio_param[2] == 'Classifier'):
 
                         model = xgb.XGBClassifier(
                             max_depth = int(radio_param[0]),learning_rate = float(radio_param[1]),subsample = float(radio_param[4]),eval_metric='mlogloss',use_label_encoder =False
@@ -151,10 +151,10 @@ def XGB(train_data,target_data,radio_param):
                         test_scores_mean = np.mean(test_scores, axis=1)
                         return train_sizes,train_scores_mean,test_scores_mean
         except ValueError:
-                raise Exception("XGBoostのobjectiveの選択に間違いがあります")
+                raise Exception('XGBoostのobjectiveの選択に間違いがあります')
 
         except Exception as e:
-            raise Exception("学習段階でエラーが出ました！")
+            raise Exception('学習段階でエラーが出ました！')
 
 
 # 与えられたdfがobjectTypeだった場合に数値に変換
@@ -201,15 +201,15 @@ def fill_null_columns(df,null_columns_covert_type):
     # それぞれの欠損値の置き換え方法によって分岐
     for key in null_columns_covert_type.keys():
 
-        if null_columns_covert_type[key] == "ave":
+        if null_columns_covert_type[key] == 'ave':
             df[key] = fill_ave(df[key])
-        elif null_columns_covert_type[key] == "mode":
+        elif null_columns_covert_type[key] == 'mode':
             df[key] = fill_mode(df[key])
-        elif null_columns_covert_type[key] == "med":
+        elif null_columns_covert_type[key] == 'med':
             df[key] = fill_med(df[key])
-        elif null_columns_covert_type[key] == "standard":
+        elif null_columns_covert_type[key] == 'standard':
             df[key] = fill_standard(df[key])
-        elif null_columns_covert_type[key] == "dele":
+        elif null_columns_covert_type[key] == 'dele':
             df.drop(key,axis=1,inplace=True)
 
     return df
@@ -252,7 +252,7 @@ def convert_object(data):
                 conv_data,original_data = pd.factorize(data, sort=True)
                 return conv_data
         except Exception as e:
-                raise Exception("Objectを変換できませんでした")
+                raise Exception('Objectを変換できませんでした')
 
 
 # float型の変換

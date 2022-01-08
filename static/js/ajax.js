@@ -2,20 +2,20 @@
 // サンプルファイルを選択した場合
 const sampleHandler = (file) => {
 
-    $.ajax("/sample", {
+    $.ajax('/sample', {
 
-        type: "post",
+        type: 'post',
         data: file, // POSTでサーバーに送信するデータ
         processData: false,
         contentType: false,
-        dataType: "json",
+        dataType: 'json',
 
     }).done(function (data) { // 成功した場合実行される
-        console.log("Ajax通信 成功");
+        console.log('Ajax通信 成功');
 
         const result = JSON.parse(data.values).result;
 
-        if (result == "0") {
+        if (result == '0') {
 
             // POSTリクエストの結果を受け取ってHTMLを書き換える
             const columns = JSON.parse(data.values).columns;
@@ -41,7 +41,7 @@ const sampleHandler = (file) => {
         }
 
     }).fail(function (data) {
-        console.log("Ajax通信 失敗");
+        console.log('Ajax通信 失敗');
 
         Swal.fire({
             icon: 'error',

@@ -29,7 +29,7 @@ app.permanent_session_lifetime = timedelta(minutes=5)
 # トップページにアクセスされたらindex.htmlを表示する
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
 
 # ユーザーがcsvをアップロードした際に実行
@@ -50,11 +50,11 @@ def show():
         session['columns'] = columns
         session['null_columns'] = null_columns
 
-        return jsonify(values=json.dumps({"columns": columns ,"null_columns":null_columns,"result": "0"}, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'columns': columns ,'null_columns':null_columns,'result': '0'}, cls=ml.MyEncoder))
 
     # csv取得に失敗した場合
     except Exception as e:
-        return jsonify(values=json.dumps({"result": "-1"}, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-1'}, cls=ml.MyEncoder))
 
 
 # ユーザーがサンプルデータを使用した場合
@@ -78,11 +78,11 @@ def sample():
         session['columns'] = columns
         session['null_columns'] = null_columns
 
-        return jsonify(values=json.dumps({"columns": columns ,"null_columns":null_columns,"result": "0"}, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'columns': columns ,'null_columns':null_columns,'result': '0'}, cls=ml.MyEncoder))
 
     # csv取得に失敗した場合
     except Exception as e:
-        return jsonify(values=json.dumps({"result": "-1"}, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-1'}, cls=ml.MyEncoder))
 
 
     
@@ -100,7 +100,7 @@ def param():
     
     except Exception as e:
         # sampleファイルを使用する場合
-        # data = open('sampledate/' + request.form.get("file_name"))
+        # data = open('sampledate/' + request.form.get('file_name'))
         file = session.get('sample_file_name')
         session['sample_file_name'] = file
         data = open('sampledate/' + file)
@@ -112,15 +112,15 @@ def param():
     model_param = []
 
     # 必要な情報を取得
-    model = request.form.get("model")
-    target = request.form.get("target","")
-    dele_columns = request.form.getlist("dele_param")
+    model = request.form.get('model')
+    target = request.form.get('target','')
+    dele_columns = request.form.getlist('dele_param')
 
     # 必須の値がない場合の処理
     if not target:
-        return jsonify(values=json.dumps({"result": "-1" , "message": "目的変数を選択してください" }, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-1' , 'message': '目的変数を選択してください' }, cls=ml.MyEncoder))
     if not model:
-        return jsonify(values=json.dumps({"result": "-1" , "message": "モデルを選択してください" }, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-1' , 'message': 'モデルを選択してください' }, cls=ml.MyEncoder))
 
     # sessionの値を取得
     if session.get('columns'):
@@ -137,7 +137,7 @@ def param():
 
             # 欠損値のカラムの処理をWeb側で選択していない場合
             if not request.form.get(key):
-                return jsonify(values=json.dumps({"result": "-1" , "message": "欠損値の処理を選択してください" }, cls=ml.MyEncoder))
+                return jsonify(values=json.dumps({'result': '-1' , 'message': '欠損値の処理を選択してください' }, cls=ml.MyEncoder))
             
             else:
                 # どの欠損値のカラムに対してどんな処理をするのかを保存
@@ -149,7 +149,7 @@ def param():
 
     # ハイパーパラメータを取得 ※
     for i in range(5):
-        model_param.append(request.form.get("model_param_" + str(i + 1)))
+        model_param.append(request.form.get('model_param_' + str(i + 1)))
     # result = None
 
     # 学習させる
@@ -160,10 +160,10 @@ def param():
         # 学習結果の値が不正な場合(noneなどが含まれている場合)
         for v in result[0]:
             if np.isnan(v):
-                return jsonify(values=json.dumps({"result": "-1" , "message": "モデルが間違っている可能性があります" }, cls=ml.MyEncoder))
+                return jsonify(values=json.dumps({'result': '-1' , 'message': 'モデルが間違っている可能性があります' }, cls=ml.MyEncoder))
         for v in result[1]:
             if np.isnan(v):
-                return jsonify(values=json.dumps({"result": "-1" , "message": "モデルが間違っている可能性があります" }, cls=ml.MyEncoder))
+                return jsonify(values=json.dumps({'result': '-1' , 'message': 'モデルが間違っている可能性があります' }, cls=ml.MyEncoder))
         
         # 学習結果をグラフに描画
         fig= plt.figure()
@@ -178,14 +178,14 @@ def param():
         canvas.print_png(png_output)
         img_data = urllib.parse.quote(png_output.getvalue())
 
-        return jsonify(values=json.dumps({"img_data": img_data ,"result": "0" , "message": "end"}, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'img_data': img_data ,'result': '0' , 'message': 'end'}, cls=ml.MyEncoder))
 
     except Exception as e:
-        return jsonify(values=json.dumps({"result": "-1" , "message": str(e) }, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-1' , 'message': str(e) }, cls=ml.MyEncoder))
 
-    # return jsonify(values=json.dumps({"result": result , "message": "complate" }, cls=ml.MyEncoder))
+    # return jsonify(values=json.dumps({'result': result , 'message': 'complate' }, cls=ml.MyEncoder))
 
-@app.route("/plot", methods=['POST'])
+@app.route('/plot', methods=['POST'])
 def plot_graph():
 
     # 学習グラフの表示
@@ -206,30 +206,30 @@ def plot_graph():
 
     # Webからの値を受け取り
     try:
-        kinds = request.form.get("kinds","")
-        x = request.form.get("x","")
-        y = request.form.get("y","")
+        kinds = request.form.get('kinds','')
+        x = request.form.get('x','')
+        y = request.form.get('y','')
 
     except:
-        return jsonify(values=json.dumps({"result": "-1" , "img_data": None }, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-1' , 'img_data': None }, cls=ml.MyEncoder))
     
-    if kinds == "default" or x == "":
-        return jsonify(values=json.dumps({"result": "-1" , "img_data": None }, cls=ml.MyEncoder))
+    if kinds == 'default' or x == '':
+        return jsonify(values=json.dumps({'result': '-1' , 'img_data': None }, cls=ml.MyEncoder))
 
     try:
         # グラフ表示に必要な情報からグラフを生成し、Web側で表示できる値に変換
         img_data = plot(x,y,df,kinds)
 
-        return jsonify(values=json.dumps({"result": "0" , "img_data": img_data}, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '0' , 'img_data': img_data}, cls=ml.MyEncoder))
 
     except TimeoutError:
         # タイムアウト処理がされた場合
-        return jsonify(values=json.dumps({"result": "-2" , "img_data": None }, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-2' , 'img_data': None }, cls=ml.MyEncoder))
 
     except Exception as e:
         print(e)
         # それ以外のエラー
-        return jsonify(values=json.dumps({"result": "-2" , "img_data": None }, cls=ml.MyEncoder))
+        return jsonify(values=json.dumps({'result': '-2' , 'img_data': None }, cls=ml.MyEncoder))
 
 
 # グラフの生成時間を3秒とし、それ以上かかる場合はタイムアウト処理
@@ -242,21 +242,21 @@ def plot(x,y,df,kinds):
     # http://myplot-for-python.com/
 
     # 棒グラフ
-    if kinds == "count1":
+    if kinds == 'count1':
         sns.countplot(df[x], ax =ax)
     
-    elif kinds == "count2":
+    elif kinds == 'count2':
         sns.countplot(x=x , data=df ,hue=y, ax =ax)
 
     # 散布図
-    elif kinds == "reg":
+    elif kinds == 'reg':
         sns.regplot(df[x], df[y],scatter = True, fit_reg = True, color = 'red')
 
     # 分布の可視化
-    elif kinds == "swarm":
+    elif kinds == 'swarm':
         sns.swarmplot(x, y, data = df, s = 12)
 
-    elif kinds == "hist":
+    elif kinds == 'hist':
         sns.histplot(df[x], bins = 20,
              kde = True, color='purple')
 

@@ -1,12 +1,12 @@
 
 
-input[type="file"] {
+input[type='file'] {
     display: none;
     }
-input[type="button"] {
+input[type='button'] {
     display: none;
 }
-input[type="submit"] {
+input[type='submit'] {
     display: none;
 }
 

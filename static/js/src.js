@@ -11,7 +11,7 @@ const alertSelect = () => {
     select.setAttribute('onchange', 'sampleHandler(this.value);')
 
     const defaultOption = document.createElement('option');
-    const defaultLabel = document.createElement("label");
+    const defaultLabel = document.createElement('label');
     defaultOption.setAttribute('value', '');
     defaultLabel.innerHTML = 'サンプルを選択してください';
     defaultOption.appendChild(defaultLabel);
@@ -20,7 +20,7 @@ const alertSelect = () => {
     for (let i = 0; i < values.length; i++) {
 
         const option = document.createElement('option');
-        option.setAttribute("value", values[i]);
+        option.setAttribute('value', values[i]);
         option.innerHTML = values[i];
 
         select.appendChild(option);
@@ -81,7 +81,7 @@ const createTargetMenu = (columns) => {
     for (let i = 0; i < columns.length; i++) {
 
         const option = document.createElement('option');
-        option.setAttribute("value", columns[i]);
+        option.setAttribute('value', columns[i]);
         option.innerHTML = columns[i];
 
         select.appendChild(option);
@@ -155,11 +155,11 @@ const switchRadioMenus = (key, keys) => {
 
     for (let i = 0; i < keys.length; i++) {
 
-        const element = document.getElementById("null_" + keys[i]);
+        const element = document.getElementById('null_' + keys[i]);
         if (key == keys[i]) {
-            element.style.display = "";
+            element.style.display = '';
         } else {
-            element.style.display = "none";
+            element.style.display = 'none';
         }
 
     }
@@ -254,7 +254,7 @@ const creatModelMenu = () => {
     removeElement(modelMenuId);
 
     const modelMenu = document.createElement('div');
-    modelMenu.setAttribute("id", modelMenuId);
+    modelMenu.setAttribute('id', modelMenuId);
 
     const select = document.createElement('select');
     select.setAttribute('name', 'model');
@@ -262,9 +262,9 @@ const creatModelMenu = () => {
 
     // 最初に表示される選択肢
     const defaultOption = document.createElement('option');
-    const defaultLabel = document.createElement("label");
-    defaultOption.setAttribute("value", "");
-    defaultLabel.innerHTML = "モデルを選択してください";
+    const defaultLabel = document.createElement('label');
+    defaultOption.setAttribute('value', '');
+    defaultLabel.innerHTML = 'モデルを選択してください';
     defaultOption.appendChild(defaultLabel);
     select.appendChild(defaultOption);
 
@@ -274,9 +274,9 @@ const creatModelMenu = () => {
     for (let i = 0; i < modelList.length; i++) {
 
         const option = document.createElement('option');
-        const label = document.createElement("label");
-        option.setAttribute("value", modelList[i]);
-        option.setAttribute("name", "model");
+        const label = document.createElement('label');
+        option.setAttribute('value', modelList[i]);
+        option.setAttribute('name', 'model');
         label.innerHTML = modelList[i];
         option.appendChild(label);
         select.appendChild(option);
