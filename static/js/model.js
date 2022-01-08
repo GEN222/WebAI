@@ -1,7 +1,7 @@
 
 const createModelMenu = () => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('param_area');
 
     const modelMenuId = 'model_menu';
 

@@ -45,7 +45,7 @@ const removeElement = (id) => {
 const createTargetMenu = (columns) => {
 
     // 親のdivを呼び出し
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('param_area');
 
     const targetMenuId = 'target_menu';
 
@@ -86,7 +86,7 @@ const createNullMenu = (nullColumns) => {
     if (keys.length > 0) {
 
         // 親のdivを呼び出し
-        const wrapper = document.getElementById('wrapper');
+        const wrapper = document.getElementById('param_area');
         const nullMenuId = 'null_menu';
 
         // null_menuが作られている場合には削除する
@@ -221,7 +221,7 @@ const createProcessingLabel = (key, value, labelName) => {
 
 const createDeleMenu = (values) => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('param_area');
     const deleMenuId = 'dele_menu';
 
     removeElement(deleMenuId);
@@ -258,7 +258,7 @@ const createDeleMenu = (values) => {
 
 const createSubmitButton = () => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('param_area');
     const subBtnId = 'sub_btn';
 
     removeElement(subBtnId);
@@ -282,7 +282,7 @@ const createSubmitButton = () => {
 
 const createImgMenu = () => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('image_area');
 
     const imgMenuId = 'img_menu';
     removeElement(imgMenuId);

@@ -3,7 +3,7 @@
 // グラフのメニュー作成
 const createGraphMenu = () => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('graph_area');
 
     const graphMenuId = 'graph_menu';
 
@@ -62,7 +62,7 @@ const switchGraphMenus = (kinds) => {
 
 const createXGraphMenu = (values) => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('graph_area');
 
     const xGraphMenuId = 'x_graph_menu';
     removeElement(xGraphMenuId);
@@ -89,7 +89,7 @@ const createXGraphMenu = (values) => {
 
 const createYGraphMenu = (values) => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('graph_area');
 
     const yGraphMenuId = 'y_graph_menu';
     removeElement(yGraphMenuId);
@@ -116,7 +116,7 @@ const createYGraphMenu = (values) => {
 
 const createGraphButton = () => {
 
-    const wrapper = document.getElementById('wrapper');
+    const wrapper = document.getElementById('graph_area');
     const graphBtnId = 'graph_btn';
 
     removeElement(graphBtnId);
