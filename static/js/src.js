@@ -341,3 +341,13 @@ const alertImage = () => {
     })
 
 }
+
+// option生成
+const createOption = (value, html) => {
+
+    const option = document.createElement('option');
+    option.setAttribute("value", value);
+    option.innerHTML = html;
+
+    return option
+}
