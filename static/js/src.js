@@ -307,7 +307,7 @@ const creatSubmitButton = () => {
 }
 
 
-const createImgArea = () => {
+const createImgMenu = () => {
 
     const wrapper = document.getElementById('wrapper');
 

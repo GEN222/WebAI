@@ -27,7 +27,7 @@ const sampleHandler = (file) => {
             creatModelMenu();
             createDeleMenu(Object.keys(columns));
             creatSubmitButton();
-            createImgArea();
+            createImgMenu();
 
             Swal.close();
 
