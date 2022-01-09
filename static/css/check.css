@@ -1,10 +1,10 @@
 
-.radio-inline__input {
+.check-inline__input {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
 }
 
-.radio-inline__label {
+.check-inline__label {
     display: inline-block;
     padding: 0.5rem 1rem;
     margin-top: 0px;
@@ -15,13 +15,13 @@
     background: #f0f8ff;
 }
 
-.radio-inline__input:checked + .radio-inline__label {
+.check-inline__input:checked + .check-inline__label {
     background: #384878;
     color: #fff;
     text-shadow: 0 0 1px rgba(0,0,0,.7);
 }
 
-.radio-inline__input:focus + .radio-inline__label {
+.check-inline__input:focus + .check-inline__label {
     outline-color: #4D90FE;
     outline-offset: -2px;
     outline-style: auto;
