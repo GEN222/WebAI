@@ -14,6 +14,7 @@ const createGraphMenu = () => {
 
     const select = document.createElement('select');
     select.setAttribute('name', 'kinds');
+    select.setAttribute('class', 'general_select');
     select.onchange = function () { switchGraphMenus(this.value) };
     select.appendChild(createOption('default', 'グラフの種類を選んでください'));
 
@@ -74,6 +75,7 @@ const createXGraphMenu = (values) => {
 
     const select = document.createElement('select');
     select.setAttribute('name', 'x');
+    select.setAttribute('class', 'general_select');
     select.appendChild(createOption('default', 'X軸の要素を選んでください'));
 
     for (let i = 0; i < values.length; i++) {
@@ -102,6 +104,7 @@ const createYGraphMenu = (values) => {
 
     const select = document.createElement('select');
     select.setAttribute('name', 'y');
+    select.setAttribute('class', 'general_select');
     select.appendChild(createOption('default', 'Y軸の要素を選んでください'));
 
     for (let i = 0; i < values.length; i++) {

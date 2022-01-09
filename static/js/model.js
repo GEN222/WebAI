@@ -13,6 +13,7 @@ const createModelMenu = () => {
     const select = document.createElement('select');
     select.setAttribute('name', 'model');
     select.setAttribute('id', 'model');
+    select.setAttribute('class', 'general_select');
     select.onchange = function () {
         // モデルに応じて表示するパラメータを変更
         createModelParamMenu(this);
