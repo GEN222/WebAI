@@ -1,0 +1,55 @@
+
+.general_select {
+	overflow: hidden;
+	width: 90%;
+	margin: 2em auto;
+	text-align: center;
+}
+.general_select select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+    font-weight: 600;
+    color: #384878;
+}
+.general_select option {
+    background-color: #f0f8ff;
+    color: #384878;
+    font-weight: 400;
+    text-align: center;
+}
+.general_select select::-ms-expand {
+    display: none;
+}
+.general_select.select1 {
+	position: relative;
+	border-radius: 5px;
+	border: 2px solid #384878;
+	background: #f0f8ff;
+}
+.general_select.select1::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #384878;
+	pointer-events: none;
+}
+.general_select.select1 select {
+	padding: 8px 38px 8px 8px;
+	color: #384878;
+}

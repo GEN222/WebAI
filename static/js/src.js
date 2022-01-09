@@ -43,6 +43,7 @@ const alertSelect = () => {
     const values = ['boston.csv', 'titanic.csv', 'dummy.csv'];
 
     const div = document.createElement('div');
+    div.setAttribute('class', 'general_select select1');
 
     const select = document.createElement('select');
     select.onchange = function () {
