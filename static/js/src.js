@@ -277,6 +277,7 @@ const createProcessingRadio = (key, value) => {
     input.setAttribute('type', 'radio');
     input.setAttribute('id', value + '_' + key);
     input.setAttribute('value', value);
+    input.setAttribute('class', 'radio-inline__input');
 
     return input;
 
@@ -286,6 +287,7 @@ const createProcessingLabel = (key, value, labelName) => {
 
     const label = document.createElement('label');
     label.setAttribute('for', value + '_' + key);
+    label.setAttribute('class', 'radio-inline__label');
     label.innerHTML = labelName;
 
     return label;
