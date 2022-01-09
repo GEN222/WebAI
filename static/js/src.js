@@ -277,7 +277,7 @@ const createProcessingRadio = (key, value) => {
     input.setAttribute('type', 'radio');
     input.setAttribute('id', value + '_' + key);
     input.setAttribute('value', value);
-    input.setAttribute('class', 'radio-inline__input');
+    input.setAttribute('class', 'check-inline__input');
 
     return input;
 
@@ -287,7 +287,7 @@ const createProcessingLabel = (key, value, labelName) => {
 
     const label = document.createElement('label');
     label.setAttribute('for', value + '_' + key);
-    label.setAttribute('class', 'radio-inline__label');
+    label.setAttribute('class', 'check-inline__label');
     label.innerHTML = labelName;
 
     return label;
@@ -318,9 +318,9 @@ const createDeleMenu = (values) => {
         input.setAttribute('value', value);
         input.setAttribute('id', id);
         input.setAttribute('name', name);
-        input.setAttribute('class', 'radio-inline__input');
+        input.setAttribute('class', 'check-inline__input');
         label.setAttribute('for', id);
-        label.setAttribute('class', 'radio-inline__label');
+        label.setAttribute('class', 'check-inline__label');
         label.innerHTML = value;
 
         checkboxMenu.appendChild(input);
