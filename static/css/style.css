@@ -54,8 +54,20 @@ button.btn:hover{
     font-size: 1.2em;
 }
 
-.content{
+.wrapper{
     text-align: center;
+}
+
+.content{
+    display: inline-block;
+    background-color: aqua;
+    width: 100%;
+}
+
+.main_section{
+    float: left;
+    width: 50%;
+    /* margin: 20 20 20 20; */
 }
 
 ul{

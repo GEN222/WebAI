@@ -2,6 +2,8 @@
 // content作成
 const createContent = () => {
 
+    const contentAreaClass = 'main_section';
+
     const contentId = 'content';
     removeElement(contentId);
 
@@ -14,16 +16,19 @@ const createContent = () => {
     const paramArea = document.createElement('div');
     const paramAreaId = 'param_area';
     paramArea.setAttribute('id', paramAreaId);
+    paramArea.setAttribute('class', contentAreaClass);
     content.appendChild(paramArea);
 
     const graphArea = document.createElement('div');
     const graphAreaId = 'graph_area';
     graphArea.setAttribute('id', graphAreaId);
+    graphArea.setAttribute('class', contentAreaClass);
     content.appendChild(graphArea);
 
     const imageArea = document.createElement('div');
     const imageAreaId = 'image_area';
     imageArea.setAttribute('id', imageAreaId);
+    imageArea.setAttribute('class', contentAreaClass);
     content.appendChild(imageArea);
 
 
