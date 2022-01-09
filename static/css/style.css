@@ -53,3 +53,12 @@ button.btn:hover{
     color: #384878;
     font-size: 1.2em;
 }
+
+.content{
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}

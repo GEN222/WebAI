@@ -9,6 +9,7 @@ const createContent = () => {
 
     const content = document.createElement('div');
     content.setAttribute('id', contentId);
+    content.setAttribute('class', 'content');
 
     const paramArea = document.createElement('div');
     const paramAreaId = 'param_area';
