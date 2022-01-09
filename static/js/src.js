@@ -45,7 +45,6 @@ const alertSelect = () => {
     const div = document.createElement('div');
 
     const select = document.createElement('select');
-    select.setAttribute('class', 'general_select');
     select.onchange = function () {
         sampleHandler(this.value);
         displayFileName(this.value);
@@ -119,7 +118,6 @@ const createTargetMenu = (columns) => {
     // selectを作成、カラムはここで表示する
     const select = document.createElement('select');
     select.setAttribute('name', 'target');
-    select.setAttribute('class', 'general_select');
 
     // defaultの表示だけ作成
     select.appendChild(createOption('default', '目的変数を選択してください'));
@@ -161,7 +159,6 @@ const createNullMenu = (nullColumns) => {
         // selectを作成、カラムはここで表示する
         const select = document.createElement('select');
         select.setAttribute('name', 'kinds_null_columns');
-        select.setAttribute('class', 'general_select');
         // switchRadioMenusで表示するradioメニューを切り替える
         select.onchange = function () {
             switchRadioMenus(this.value, keys);
