@@ -304,10 +304,10 @@ const createDeleMenu = (values) => {
     const deleMenu = document.createElement('div');
     deleMenu.setAttribute('id', deleMenuId);
 
-    const ul = document.createElement('ul');
+    // checkboxのdiv
+    const checkboxMenu = document.createElement('div');
 
     for (var i = 0; i < values.length; i++) {
-        const li = document.createElement('li');
         const input = document.createElement('input');
         const label = document.createElement('label');
         const br = document.createElement('br');
@@ -318,17 +318,18 @@ const createDeleMenu = (values) => {
         input.setAttribute('value', value);
         input.setAttribute('id', id);
         input.setAttribute('name', name);
+        input.setAttribute('class', 'radio-inline__input');
         label.setAttribute('for', id);
+        label.setAttribute('class', 'radio-inline__label');
         label.innerHTML = value;
 
-        label.appendChild(input);
-        li.appendChild(label);
+        checkboxMenu.appendChild(input);
+        checkboxMenu.appendChild(label);
 
-        ul.appendChild(li);
     }
 
     deleMenu.appendChild(createText('削除する値を選択してください'));
-    deleMenu.appendChild(ul);
+    deleMenu.appendChild(checkboxMenu);
     wrapper.appendChild(deleMenu);
 }
 
