@@ -26,6 +26,7 @@ const createGraphMenu = () => {
 
     }
 
+    graphMenu.appendChild(createText('グラフの種類を選んでください'));
     graphMenu.appendChild(select);
     wrapper.appendChild(graphMenu);
 
@@ -81,6 +82,7 @@ const createXGraphMenu = (values) => {
 
     }
 
+    xGraphMenu.appendChild(createText('X軸の要素を選んでください'));
     xGraphMenu.appendChild(select);
     wrapper.appendChild(xGraphMenu);
 
@@ -108,6 +110,7 @@ const createYGraphMenu = (values) => {
 
     }
 
+    yGraphMenu.appendChild(createText('Y軸の要素を選んでください'));
     yGraphMenu.appendChild(select);
     wrapper.appendChild(yGraphMenu);
 

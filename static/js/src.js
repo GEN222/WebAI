@@ -90,6 +90,17 @@ const removeElement = (id) => {
 }
 
 
+// textを生成し戻す
+const createText = (textValue) => {
+
+    const text = document.createElement('p');
+    text.innerHTML = textValue;
+
+    return text
+
+}
+
+
 const createTargetMenu = (columns) => {
 
     // 親のdivを呼び出し
@@ -118,7 +129,9 @@ const createTargetMenu = (columns) => {
 
     }
 
+
     // それぞれの要素を親に追加
+    targetMenu.appendChild(createText('目的変数を選択してください'));
     targetMenu.appendChild(select);
     wrapper.appendChild(targetMenu);
 
@@ -152,6 +165,7 @@ const createNullMenu = (nullColumns) => {
         };
         select.appendChild(createOption('default', '欠損値を選択してください'));
 
+        nullMenu.appendChild(createText('欠損値の処理を選択してください'));
         nullMenu.appendChild(select);
 
         for (let i = 0; i < keys.length; i++) {
@@ -300,6 +314,7 @@ const createDeleMenu = (values) => {
         ul.appendChild(li);
     }
 
+    deleMenu.appendChild(createText('削除する値を選択してください'));
     deleMenu.appendChild(ul);
     wrapper.appendChild(deleMenu);
 }
