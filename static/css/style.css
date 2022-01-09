@@ -10,6 +10,11 @@ input[type='submit'] {
     display: none;
 }
 
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
 .btn {
     font-size: 1.2rem;
     font-weight: 700;
@@ -67,10 +72,9 @@ button.btn:hover{
 .main_section{
     float: left;
     width: 50%;
-    /* margin: 20 20 20 20; */
+    padding-top: 5%;
 }
 
-ul{
-    list-style: none;
-    padding-left: 0;
+.img_menu{
+    width: 80%;
 }

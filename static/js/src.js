@@ -333,6 +333,7 @@ const createImgMenu = () => {
     const wrapper = document.getElementById('image_area');
 
     const imgMenuId = 'img_menu';
+    const imgMenuClass = 'img_menu';
     removeElement(imgMenuId);
 
     const imgMenu = document.createElement('div');
@@ -341,6 +342,7 @@ const createImgMenu = () => {
     const img = document.createElement('img');
     const imgId = 'plot_graph';
     img.setAttribute('id', imgId);
+    img.setAttribute('class', imgMenuClass);
     img.onclick = function () {
         alertImage();
     };
