@@ -11,6 +11,7 @@ const createGraphMenu = () => {
 
     const graphMenu = document.createElement('div');
     graphMenu.setAttribute('id', graphMenuId);
+    graphMenu.setAttribute('class', 'general_select select1');
 
     const select = document.createElement('select');
     select.setAttribute('name', 'kinds');
@@ -26,7 +27,7 @@ const createGraphMenu = () => {
 
     }
 
-    graphMenu.appendChild(createText('グラフの種類を選んでください'));
+    wrapper.appendChild(createText('グラフの種類を選んでください'));
     graphMenu.appendChild(select);
     wrapper.appendChild(graphMenu);
 
@@ -70,6 +71,7 @@ const createXGraphMenu = (values) => {
 
     const xGraphMenu = document.createElement('div');
     xGraphMenu.setAttribute('id', xGraphMenuId);
+    xGraphMenu.setAttribute('class', 'general_select select1');
     xGraphMenu.setAttribute('style', 'display: none');
 
     const select = document.createElement('select');
@@ -82,7 +84,7 @@ const createXGraphMenu = (values) => {
 
     }
 
-    xGraphMenu.appendChild(createText('X軸の要素を選んでください'));
+    wrapper.appendChild(createText('X軸の要素を選んでください'));
     xGraphMenu.appendChild(select);
     wrapper.appendChild(xGraphMenu);
 
@@ -98,6 +100,7 @@ const createYGraphMenu = (values) => {
 
     const yGraphMenu = document.createElement('div');
     yGraphMenu.setAttribute('id', yGraphMenuId);
+    yGraphMenu.setAttribute('class', 'general_select select1');
     yGraphMenu.setAttribute('style', 'display: none');
 
     const select = document.createElement('select');
@@ -110,7 +113,7 @@ const createYGraphMenu = (values) => {
 
     }
 
-    yGraphMenu.appendChild(createText('Y軸の要素を選んでください'));
+    wrapper.appendChild(createText('Y軸の要素を選んでください'));
     yGraphMenu.appendChild(select);
     wrapper.appendChild(yGraphMenu);
 

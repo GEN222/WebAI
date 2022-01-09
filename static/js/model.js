@@ -9,7 +9,7 @@ const createModelMenu = () => {
 
     const modelMenu = document.createElement('div');
     modelMenu.setAttribute('id', modelMenuId);
-
+    modelMenu.setAttribute('class', 'general_select select1');
 
     const select = document.createElement('select');
     select.setAttribute('name', 'model');
@@ -31,7 +31,7 @@ const createModelMenu = () => {
 
     }
 
-    modelMenu.appendChild(createText('モデルとパラメーターを選択してください'));
+    wrapper.appendChild(createText('モデルとパラメーターを選択してください'));
     modelMenu.appendChild(select);
     wrapper.appendChild(modelMenu);
 

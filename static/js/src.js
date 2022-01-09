@@ -115,6 +115,7 @@ const createTargetMenu = (columns) => {
     // target_menuを作成
     const targetMenu = document.createElement('div');
     targetMenu.setAttribute('id', targetMenuId);
+    targetMenu.setAttribute('class', 'general_select select1');
 
     // selectを作成、カラムはここで表示する
     const select = document.createElement('select');
@@ -132,7 +133,7 @@ const createTargetMenu = (columns) => {
 
 
     // それぞれの要素を親に追加
-    targetMenu.appendChild(createText('目的変数を選択してください'));
+    wrapper.appendChild(createText('目的変数を選択してください'));
     targetMenu.appendChild(select);
     wrapper.appendChild(targetMenu);
 
@@ -156,6 +157,7 @@ const createNullMenu = (nullColumns) => {
 
         const nullMenu = document.createElement('div');
         nullMenu.setAttribute('id', nullMenuId);
+        nullMenu.setAttribute('class', 'general_select select1');
 
         // selectを作成、カラムはここで表示する
         const select = document.createElement('select');
@@ -166,7 +168,7 @@ const createNullMenu = (nullColumns) => {
         };
         select.appendChild(createOption('default', '欠損値を選択してください'));
 
-        nullMenu.appendChild(createText('欠損値の処理を選択してください'));
+        wrapper.appendChild(createText('欠損値の処理を選択してください'));
         nullMenu.appendChild(select);
 
         for (let i = 0; i < keys.length; i++) {
