@@ -115,7 +115,10 @@ const createTargetMenu = (columns) => {
     // target_menuを作成
     const targetMenu = document.createElement('div');
     targetMenu.setAttribute('id', targetMenuId);
-    targetMenu.setAttribute('class', 'general_select select1');
+
+    //selectのdivを作成
+    const selectMenu = document.createElement('div');
+    selectMenu.setAttribute('class', 'general_select select1');
 
     // selectを作成、カラムはここで表示する
     const select = document.createElement('select');
@@ -133,8 +136,9 @@ const createTargetMenu = (columns) => {
 
 
     // それぞれの要素を親に追加
-    wrapper.appendChild(createText('目的変数を選択してください'));
-    targetMenu.appendChild(select);
+    selectMenu.appendChild(select);
+    targetMenu.appendChild(createText('目的変数を選択してください'));
+    targetMenu.appendChild(selectMenu);
     wrapper.appendChild(targetMenu);
 
 }
@@ -157,27 +161,31 @@ const createNullMenu = (nullColumns) => {
 
         const nullMenu = document.createElement('div');
         nullMenu.setAttribute('id', nullMenuId);
-        nullMenu.setAttribute('class', 'general_select select1');
 
+        // selectのdiv
+        const selectMenu = document.createElement('div');
+        selectMenu.setAttribute('class', 'general_select select1');
         // selectを作成、カラムはここで表示する
         const select = document.createElement('select');
         select.setAttribute('name', 'kinds_null_columns');
         // switchRadioMenusで表示するradioメニューを切り替える
-        select.onchange = function () {
-            switchRadioMenus(this.value, keys);
-        };
+        select.onchange = function () { switchRadioMenus(this.value, keys); };
         select.appendChild(createOption('default', '欠損値を選択してください'));
 
-        wrapper.appendChild(createText('欠損値の処理を選択してください'));
-        nullMenu.appendChild(select);
+        nullMenu.appendChild(createText('欠損値の処理を選択してください'));
+        selectMenu.appendChild(select);
+
+        const radioMenu = document.createElement('div');
 
         for (let i = 0; i < keys.length; i++) {
 
             select.appendChild(createOption(keys[i], keys[i] + ' : 欠損数/' + nullColumns[keys[i]][0] + '個(' + nullColumns[keys[i]][2] + '%)'));
-            nullMenu.appendChild(createRadioMenu(keys[i], nullColumns));
+            radioMenu.appendChild(createRadioMenu(keys[i], nullColumns));
 
         }
 
+        nullMenu.appendChild(selectMenu);
+        nullMenu.appendChild(radioMenu);
         wrapper.appendChild(nullMenu);
 
     } else {
