@@ -1,9 +1,9 @@
 
 .general_select {
 	overflow: hidden;
-	width: max-content;
-    min-width: 50%;
-	margin: 2em auto;
+	/* width: max-content; */
+    max-width: max-content;
+	margin: 1.2em auto;
 	text-align: center;
 }
 .general_select select {
@@ -19,7 +19,8 @@
 	box-shadow: none;
 	-webkit-appearance: none;
 	appearance: none;
-    font-weight: 600;
+	font-size: 1.1rem;
+    /* font-weight: 600; */
     color: #384878;
 }
 .general_select option {
