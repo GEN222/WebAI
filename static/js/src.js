@@ -95,6 +95,7 @@ const removeElement = (id) => {
 const createText = (textValue) => {
 
     const text = document.createElement('p');
+    text.setAttribute('class', 'info_message');
     text.innerHTML = textValue;
 
     return text
