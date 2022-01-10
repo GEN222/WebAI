@@ -65,18 +65,30 @@ button.btn:hover{
 
 .content{
     display: inline-block;
-    width: 100%;
+    width: 80%;
 }
 
 .main_section{
     float: left;
     width: 50%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .img_menu{
     width: 80%;
 }
 
-
+.info_message{
+    /* padding: 10px; */
+    width: max-content;
+    text-align: center;
+    padding: 5px 10px;
+    margin:auto;
+    margin-bottom: 2%;
+    color: #384878;
+    font-size: 1em;
+    border-left :solid 5px #384878;
+    border-bottom: solid 1px gray;
+    text-shadow: 1px 1px 2px silver;
+}
