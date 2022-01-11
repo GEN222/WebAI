@@ -31,8 +31,8 @@ const getRandomForestClassifierParams = () => {
     n_estimators_label.setAttribute('for', 'model_param_1');
     td1.appendChild(n_estimators_label);
     td1.appendChild(n_estimators);
-    td1.appendChild(createSpinnerBox()[0]);
-    td1.appendChild(createSpinnerBox()[1]);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10)[0]);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10)[1]);
 
 
 
@@ -279,7 +279,7 @@ const getXGBoostParams = () => {
 }
 
 
-const createSpinnerBox = () => {
+const createSpinnerBox = (id, max, min) => {
 
     //  <input type="button" value="＋" class="btnspinner" data-cal="1" data-target=".counter1">
     // data-cal="1" data-target=".counter1"
@@ -287,14 +287,42 @@ const createSpinnerBox = () => {
     up.setAttribute('type', 'button');
     up.setAttribute('value', '＋');
     up.setAttribute('class', 'btn_spinner');
-    up.setAttribute('data-cal', '1');
-    up.setAttribute('data-target', '.btn_spinner');
+    up.onclick = function () {
+        sumNumber(1, id, max);
+    };
     const down = document.createElement('input');
     down.setAttribute('type', 'button');
     down.setAttribute('value', '－');
     down.setAttribute('class', 'btn_spinner');
+    down.onclick = function () {
+        subNumber(1, id, min);
+    };
 
     return [up, down]
+
+}
+
+const sumNumber = (num, id, max) => {
+
+    const target = document.getElementById(id);
+
+    if (Number(target.value) + Number(num) > max) {
+        target.value = max;
+    } else {
+        target.value = Number(target.value) + Number(num);
+    }
+
+}
+
+const subNumber = (num, id, min) => {
+
+    const target = document.getElementById(id);
+
+    if (Number(target.value) - Number(num) < min) {
+        target.value = min;
+    } else {
+        target.value = Number(target.value) - Number(num);
+    }
 
 }
 
