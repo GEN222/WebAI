@@ -3,9 +3,6 @@
 input[type='file'] {
     display: none;
     }
-input[type='button'] {
-    display: none;
-}
 input[type='submit'] {
     display: none;
 }
@@ -96,8 +93,29 @@ button.btn:hover{
     /* text-shadow: 1px 1px 2px silver; */
 }
 
-.model_param_menu{
-    background-color: #384878;
+.model_param_menu input{
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    width: auto;
+    vertical-align: middle;
+    /* デフォルトのスピナーを消す */
+    -webkit-appearance: none;
+    -moz-appearance:textfield;
+}
+
+.model_param_menu input[type="button"]{
+    cursor: pointer;
+}
+
+
+.btn_spinner{
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 @media screen and (max-width: 767px) {
