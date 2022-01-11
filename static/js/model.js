@@ -107,13 +107,18 @@ const maxDepthFunc = (element) => {
         const max_depth_int = document.createElement('input');
         max_depth_int.setAttribute('type', 'number');
         max_depth_int.setAttribute('name', 'model_param_3');
+        max_depth_int.setAttribute('id', 'model_param_3_1');
         max_depth_int.setAttribute('value', '100');
         max_depth_int.setAttribute('max', '1000');
         max_depth_int.setAttribute('min', '1');
         element.appendChild(max_depth_int);
+        element.appendChild(createSpinnerBox('model_param_3_1', 1000, 10, 1)[0]);
+        element.appendChild(createSpinnerBox('model_param_3_1', 1000, 10, 1)[1]);
 
     } else {
 
+        element.removeChild(element.childNodes[2]);
+        element.removeChild(element.childNodes[2]);
         element.removeChild(element.childNodes[2]);
 
     }
@@ -127,13 +132,18 @@ const maxLeafNodesFunc = (element) => {
         let max_leaf_nodes_int = document.createElement('input');
         max_leaf_nodes_int.setAttribute('type', 'number');
         max_leaf_nodes_int.setAttribute('name', 'model_param_5');
+        max_leaf_nodes_int.setAttribute('id', 'model_param_5_1');
         max_leaf_nodes_int.setAttribute('value', '15');
         max_leaf_nodes_int.setAttribute('max', '200');
         max_leaf_nodes_int.setAttribute('min', '0');
         element.appendChild(max_leaf_nodes_int);
+        element.appendChild(createSpinnerBox('model_param_5_1', 200, 0, 1)[0]);
+        element.appendChild(createSpinnerBox('model_param_5_1', 200, 0, 1)[1]);
 
     } else {
 
+        element.removeChild(element.childNodes[2]);
+        element.removeChild(element.childNodes[2]);
         element.removeChild(element.childNodes[2]);
 
     }

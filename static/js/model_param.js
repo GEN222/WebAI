@@ -18,9 +18,9 @@
 
 const getRandomForestClassifierParams = () => {
     //n_estimators
-    let td1 = document.createElement('li');
-    let n_estimators_label = document.createElement('label');
-    let n_estimators = document.createElement('input');
+    const td1 = document.createElement('li');
+    const n_estimators_label = document.createElement('label');
+    const n_estimators = document.createElement('input');
     n_estimators.setAttribute('name', 'model_param_1');
     n_estimators.setAttribute('id', 'model_param_1');
     n_estimators.setAttribute('type', 'number');
@@ -37,11 +37,11 @@ const getRandomForestClassifierParams = () => {
 
 
     //criterion
-    let td2 = document.createElement('li');
-    let criterion_label = document.createElement('label');
-    let criterion = document.createElement('select');
-    let gini = document.createElement('option');
-    let entropy = document.createElement('option');
+    const td2 = document.createElement('li');
+    const criterion_label = document.createElement('label');
+    const criterion = document.createElement('select');
+    const gini = document.createElement('option');
+    const entropy = document.createElement('option');
     gini.setAttribute('value', 'gini');
     gini.appendChild(document.createTextNode('gini'));
     entropy.setAttribute('value', 'entropy');
@@ -56,9 +56,9 @@ const getRandomForestClassifierParams = () => {
     td2.appendChild(criterion);
 
     //max_depth
-    let td3 = document.createElement('li');
-    let max_depth_label = document.createElement('label');
-    let max_depth = document.createElement('input');
+    const td3 = document.createElement('li');
+    const max_depth_label = document.createElement('label');
+    const max_depth = document.createElement('input');
     max_depth.setAttribute('type', 'checkbox');
     max_depth.setAttribute('value', '');
     max_depth.onchange = function () { maxDepthFunc(td3) };
@@ -69,9 +69,9 @@ const getRandomForestClassifierParams = () => {
     td3.appendChild(max_depth);
 
     //min_samples_split
-    let td4 = document.createElement('li');
-    let min_samples_split_label = document.createElement('label');
-    let min_samples_split = document.createElement('input');
+    const td4 = document.createElement('li');
+    const min_samples_split_label = document.createElement('label');
+    const min_samples_split = document.createElement('input');
     min_samples_split.setAttribute('type', 'number');
     min_samples_split.setAttribute('name', 'model_param_4');
     min_samples_split.setAttribute('id', 'model_param_4');
@@ -86,9 +86,9 @@ const getRandomForestClassifierParams = () => {
     td4.appendChild(createSpinnerBox('model_param_4', 2000, 10, 1)[1]);
 
     //max_leaf_nodes
-    let td5 = document.createElement('li');
-    let max_leaf_nodes_label = document.createElement('label');
-    let max_leaf_nodes = document.createElement('input');
+    const td5 = document.createElement('li');
+    const max_leaf_nodes_label = document.createElement('label');
+    const max_leaf_nodes = document.createElement('input');
     max_leaf_nodes.setAttribute('id', 'model_param_5');
     max_leaf_nodes.setAttribute('type', 'checkbox');
     max_leaf_nodes.setAttribute('value', '');
@@ -108,9 +108,9 @@ const getRandomForestClassifierParams = () => {
 
 const getRandomForestRegressorParams = () => {
     //n_estimators
-    let td1 = document.createElement('li');
-    let n_estimators_label = document.createElement('label');
-    let n_estimators = document.createElement('input');
+    const td1 = document.createElement('li');
+    const n_estimators_label = document.createElement('label');
+    const n_estimators = document.createElement('input');
     n_estimators.setAttribute('name', 'model_param_1');
     n_estimators.setAttribute('id', 'model_param_1');
     n_estimators.setAttribute('type', 'number');
@@ -126,11 +126,11 @@ const getRandomForestRegressorParams = () => {
 
     //criterion
 
-    let td2 = document.createElement('li');
-    let criterion_label = document.createElement('label');
-    let criterion = document.createElement('select');
-    let friedman_mse = document.createElement('option');
-    let squared_error = document.createElement('option');
+    const td2 = document.createElement('li');
+    const criterion_label = document.createElement('label');
+    const criterion = document.createElement('select');
+    const friedman_mse = document.createElement('option');
+    const squared_error = document.createElement('option');
     friedman_mse.setAttribute('value', 'friedman_mse');
     friedman_mse.appendChild(document.createTextNode('friedman_mse'));
     squared_error.setAttribute('value', 'squared_error');
@@ -145,9 +145,9 @@ const getRandomForestRegressorParams = () => {
     td2.appendChild(criterion);
 
     //max_depth td3_max_depth
-    let td3 = document.createElement('li');
-    let max_depth_label = document.createElement('label');
-    let max_depth = document.createElement('input');
+    const td3 = document.createElement('li');
+    const max_depth_label = document.createElement('label');
+    const max_depth = document.createElement('input');
     max_depth.setAttribute('id', 'model_param_3');
     max_depth.setAttribute('type', 'checkbox');
     max_depth.setAttribute('value', '');
@@ -158,9 +158,9 @@ const getRandomForestRegressorParams = () => {
     td3.appendChild(max_depth);
 
     //min_samples_split
-    let td4 = document.createElement('li');
-    let min_samples_split_label = document.createElement('label');
-    let min_samples_split = document.createElement('input');
+    const td4 = document.createElement('li');
+    const min_samples_split_label = document.createElement('label');
+    const min_samples_split = document.createElement('input');
     min_samples_split.setAttribute('type', 'number');
     min_samples_split.setAttribute('name', 'model_param_4');
     min_samples_split.setAttribute('id', 'model_param_4');
@@ -175,9 +175,9 @@ const getRandomForestRegressorParams = () => {
     td4.appendChild(createSpinnerBox('model_param_4', 2000, 10, 1)[1]);
 
     //max_leaf_nodes
-    let td5 = document.createElement('li');
-    let max_leaf_nodes_label = document.createElement('label');
-    let max_leaf_nodes = document.createElement('input');
+    const td5 = document.createElement('li');
+    const max_leaf_nodes_label = document.createElement('label');
+    const max_leaf_nodes = document.createElement('input');
     max_leaf_nodes.setAttribute('type', 'checkbox');
     max_leaf_nodes.setAttribute('id', 'model_param_5');
     max_leaf_nodes.setAttribute('value', '');
@@ -200,9 +200,9 @@ const getRandomForestRegressorParams = () => {
 const getXGBoostParams = () => {
 
     //max_depth
-    let td1 = document.createElement('li');
-    let max_depth_xgb_label = document.createElement('label');
-    let max_depth_xgb = document.createElement('input');
+    const td1 = document.createElement('li');
+    const max_depth_xgb_label = document.createElement('label');
+    const max_depth_xgb = document.createElement('input');
     max_depth_xgb.setAttribute('name', 'model_param_1');
     max_depth_xgb.setAttribute('id', 'model_param_1');
     max_depth_xgb.setAttribute('type', 'number');
@@ -217,9 +217,9 @@ const getXGBoostParams = () => {
     td1.appendChild(createSpinnerBox('model_param_1', 1000, 0, 1)[1]);
 
     //eta
-    let td2 = document.createElement('li');
-    let eta_xgb_label = document.createElement('label');
-    let eta_xgb = document.createElement('input');
+    const td2 = document.createElement('li');
+    const eta_xgb_label = document.createElement('label');
+    const eta_xgb = document.createElement('input');
     eta_xgb.setAttribute('step', '0.1');
     eta_xgb.setAttribute('name', 'model_param_2');
     eta_xgb.setAttribute('id', 'model_param_2');
@@ -235,11 +235,11 @@ const getXGBoostParams = () => {
     td2.appendChild(createSpinnerBox('model_param_2', 1, 0, 0.1)[1]);
 
     //objective
-    let td3 = document.createElement('li');
-    let objective_xgb_label = document.createElement('label');
-    let objective_xgb = document.createElement('select');
-    let linear = document.createElement('option');
-    let softmax = document.createElement('option');
+    const td3 = document.createElement('li');
+    const objective_xgb_label = document.createElement('label');
+    const objective_xgb = document.createElement('select');
+    const linear = document.createElement('option');
+    const softmax = document.createElement('option');
     objective_xgb.setAttribute('id', 'model_param_3');
     linear.setAttribute('value', 'Regressor');
     linear.appendChild(document.createTextNode('Regressor'));
@@ -254,9 +254,9 @@ const getXGBoostParams = () => {
     td3.appendChild(objective_xgb);
 
     //num_round
-    let td4 = document.createElement('li');
-    let num_round_xgb_label = document.createElement('label');
-    let num_round_xgb = document.createElement('input');
+    const td4 = document.createElement('li');
+    const num_round_xgb_label = document.createElement('label');
+    const num_round_xgb = document.createElement('input');
     num_round_xgb.setAttribute('name', 'model_param_4');
     num_round_xgb.setAttribute('id', 'model_param_4');
     num_round_xgb.setAttribute('type', 'number');
@@ -271,9 +271,9 @@ const getXGBoostParams = () => {
     td4.appendChild(createSpinnerBox('model_param_4', 100, 10, 1)[1]);
 
     // subsample
-    let td5 = document.createElement('li');
-    let subsample_label = document.createElement('label');
-    let subsample = document.createElement('input');
+    const td5 = document.createElement('li');
+    const subsample_label = document.createElement('label');
+    const subsample = document.createElement('input');
     subsample.setAttribute('step', '0.1');
     subsample.setAttribute('name', 'model_param_5');
     subsample.setAttribute('id', 'model_param_5');

@@ -102,6 +102,10 @@ button.btn:hover{
     border-radius: 3px;
     transition: all .2s;
     background: #f0f8ff;
+    outline-color: #384878;
+    outline-offset: -2px;
+    outline-style: auto;
+    outline-width: 5px;
 }
 .model_param_menu label{
     font-weight: bold;
@@ -113,7 +117,10 @@ button.btn:hover{
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 18px;
-    /* デフォルトのスピナーを消す */
+}
+
+.model_param_menu input[type="number"]{
+    
     -webkit-appearance: none;
     -moz-appearance:textfield;
 }
@@ -122,6 +129,20 @@ button.btn:hover{
     cursor: pointer;
 }
 
+.model_param_menu select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* width: 100%; */
+    height: 30px;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    padding: 0 1em;
+    border: 1px solid #b4b3b3;
+    border-radius: 2px;
+    text-align: center;
+}
 
 .btn_spinner{
     width: 2em;
