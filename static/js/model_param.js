@@ -31,8 +31,8 @@ const getRandomForestClassifierParams = () => {
     n_estimators_label.setAttribute('for', 'model_param_1');
     td1.appendChild(n_estimators_label);
     td1.appendChild(n_estimators);
-    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10)[0]);
-    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10)[1]);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10, 1)[0]);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10, 1)[1]);
 
 
 
@@ -82,6 +82,8 @@ const getRandomForestClassifierParams = () => {
     min_samples_split_label.innerHTML = 'min_samples_split';
     td4.appendChild(min_samples_split_label);
     td4.appendChild(min_samples_split);
+    td4.appendChild(createSpinnerBox('model_param_4', 2000, 10, 1)[0]);
+    td4.appendChild(createSpinnerBox('model_param_4', 2000, 10, 1)[1]);
 
     //max_leaf_nodes
     let td5 = document.createElement('li');
@@ -119,6 +121,8 @@ const getRandomForestRegressorParams = () => {
     n_estimators_label.setAttribute('for', 'model_param_1');
     td1.appendChild(n_estimators_label);
     td1.appendChild(n_estimators);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10, 1)[0]);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 10, 1)[1]);
 
     //criterion
 
@@ -167,6 +171,8 @@ const getRandomForestRegressorParams = () => {
     min_samples_split_label.setAttribute('for', 'model_param_4');
     td4.appendChild(min_samples_split_label);
     td4.appendChild(min_samples_split);
+    td4.appendChild(createSpinnerBox('model_param_4', 2000, 10, 1)[0]);
+    td4.appendChild(createSpinnerBox('model_param_4', 2000, 10, 1)[1]);
 
     //max_leaf_nodes
     let td5 = document.createElement('li');
@@ -207,6 +213,8 @@ const getXGBoostParams = () => {
     max_depth_xgb_label.setAttribute('for', 'model_param_1');
     td1.appendChild(max_depth_xgb_label);
     td1.appendChild(max_depth_xgb);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 0, 1)[0]);
+    td1.appendChild(createSpinnerBox('model_param_1', 1000, 0, 1)[1]);
 
     //eta
     let td2 = document.createElement('li');
@@ -223,6 +231,8 @@ const getXGBoostParams = () => {
     eta_xgb_label.setAttribute('for', 'model_param_2');
     td2.appendChild(eta_xgb_label);
     td2.appendChild(eta_xgb);
+    td2.appendChild(createSpinnerBox('model_param_2', 1, 0, 0.1)[0]);
+    td2.appendChild(createSpinnerBox('model_param_2', 1, 0, 0.1)[1]);
 
     //objective
     let td3 = document.createElement('li');
@@ -257,6 +267,8 @@ const getXGBoostParams = () => {
     num_round_xgb_label.setAttribute('for', 'model_param_4');
     td4.appendChild(num_round_xgb_label);
     td4.appendChild(num_round_xgb);
+    td4.appendChild(createSpinnerBox('model_param_4', 100, 10, 1)[0]);
+    td4.appendChild(createSpinnerBox('model_param_4', 100, 10, 1)[1]);
 
     // subsample
     let td5 = document.createElement('li');
@@ -273,13 +285,15 @@ const getXGBoostParams = () => {
     subsample_label.setAttribute('for', 'model_param_5');
     td5.appendChild(subsample_label);
     td5.appendChild(subsample);
+    td5.appendChild(createSpinnerBox('model_param_5', 1, 0, 0.1)[0]);
+    td5.appendChild(createSpinnerBox('model_param_5', 1, 0, 0.1)[1]);
 
 
     return [td1, td2, td3, td4, td5];
 }
 
 
-const createSpinnerBox = (id, max, min) => {
+const createSpinnerBox = (id, max, min, value) => {
 
     //  <input type="button" value="＋" class="btnspinner" data-cal="1" data-target=".counter1">
     // data-cal="1" data-target=".counter1"
@@ -288,14 +302,14 @@ const createSpinnerBox = (id, max, min) => {
     up.setAttribute('value', '＋');
     up.setAttribute('class', 'btn_spinner');
     up.onclick = function () {
-        sumNumber(1, id, max);
+        sumNumber(value, id, max);
     };
     const down = document.createElement('input');
     down.setAttribute('type', 'button');
     down.setAttribute('value', '－');
     down.setAttribute('class', 'btn_spinner');
     down.onclick = function () {
-        subNumber(1, id, min);
+        subNumber(value, id, min);
     };
 
     return [up, down]
