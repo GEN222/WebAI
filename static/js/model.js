@@ -53,6 +53,7 @@ const createModelParamMenu = (model) => {
 
     const modelParamMenu = document.createElement('div');
     modelParamMenu.setAttribute('id', modelParamMenuId);
+    modelParamMenu.setAttribute('class', 'model_param_menu');
 
     const ul = document.createElement('ul');
 
