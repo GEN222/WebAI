@@ -1,7 +1,9 @@
-/* 
-** The Header Media Queries **
-** Tweak as per your needs **
-*/
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
 .brand {
     display: inline-block;
     font-weight: bold;
@@ -11,46 +13,72 @@
         margin-bottom: 1rem; } 
     }
   .site-header {
+      width: 100%;
     position: relative;
+    background-color: #f0f8ff;
     /* background-color: #def7ff;  */
+}
+
+.title{
+    color: #384878;
+}
+
+.nav{
+    background-color: #f0f8ff;
 }
   
   .site-header__wrapper {
     padding-top: 1rem;
-    padding-bottom: 1rem; }
-    @media (min-width: 600px) {
-      .site-header__wrapper {
-        text-align: center; } }
-  @media (min-width: 600px) {
+    padding-bottom: 1rem; 
+}
+@media (min-width: 600px) {
+    .site-header__wrapper {
+        text-align: center; 
+    } 
+}
+
+@media (min-width: 600px) {
     .nav__wrapper {
-      display: inline-flex; } }
+        display: inline-flex; 
+    } 
+}
   
-  @media (max-width: 599px) {
-    .nav__wrapper {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      left: 0;
-      z-index: -1;
-      background-color: #d9f0f7;
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
-      .nav__wrapper.active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0); } }
+
   
-  .nav__item a {
-    display: block;
-    padding: 1rem; }
-  
-  .nav__toggle {
-    display: none; }
-    @media (max-width: 599px) {
-      .nav__toggle {
-        display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1rem; } }
+.nav__item {
+    /* display: block;
+    padding: 0.5em 1rem; 
+    margin: 0 1em;
+    border: 2px solid #384878;
+    -webkit-transition: all 0.3s; */
+    padding: 0.5em;
+}
+
+.nav__item button{
+    font-size: 1rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding: 0.7em 1em;
+    margin: 0 1em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #384878;
+    border-radius: 0.5rem;
+    border: 2px solid #384878;
+    border-radius: 0;
+    background: #f0f8ff;
+}
+.nav__item button:hover{
+    color: #fff;
+    background: #384878;
+}

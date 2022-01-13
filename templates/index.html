@@ -33,16 +33,22 @@
 <header class="site-header">
   <div class="wrapper site-header__wrapper">
     <!-- <a href="#" class="brand">Brand</a> -->
-    <h1>WebAI</h1>
+    <h1 class='title'>WebAI</h1>
     <nav class="nav">
-      <button class="nav__toggle" aria-expanded="false" type="button">
-        menu
-      </button>
       <ul class="nav__wrapper">
-        <li class="nav__item"><a href="{{ url_for('static',filename='PDF/機械学習の概要.pdf') }}" target="_blank" rel="noopener noreferrer">機械学習とは？</a></li>
-        <li class="nav__item"><a href="#">アプリ概要</a></li>
-        <li class="nav__item"><a href="#">使い方</a></li>
-        <li class="nav__item"><a href="#">チュートリアル</a></li>
+        
+        <li class="nav__item">
+          <button type='button' onClick="window.open('static/PDF/機械学習の概要.pdf','__brank')">機械学習とは？</button>
+        </li>
+        <li class="nav__item">
+          <button type='button' >アプリ概要</button>
+        </li>
+        <li class="nav__item">
+          <button type='button' >使い方</button>
+        </li>
+        <li class="nav__item">
+          <button type='button' >チュートリアル</button>
+        </li>
       </ul>
     </nav>
   </div>
