@@ -110,6 +110,7 @@ button.btn:hover{
 .model_param_menu label{
     font-weight: bold;
     color: #384878;
+    padding-right: 5px;
 }
 
 .model_param_menu input{
@@ -130,18 +131,19 @@ button.btn:hover{
 }
 
 .model_param_menu select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    font-size: 18px;
+    /* -webkit-appearance: none;
+    -moz-appearance: none; */
+    /* appearance: none; */
     /* width: 100%; */
     height: 30px;
     background: transparent;
     position: relative;
     z-index: 1;
     padding: 0 1em;
-    border: 1px solid #b4b3b3;
+    border: 1px solid #384878;
     border-radius: 2px;
-    text-align: center;
+    background-color: #ffffff;
 }
 
 .btn_spinner{
