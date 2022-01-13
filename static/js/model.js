@@ -112,8 +112,8 @@ const maxDepthFunc = (element) => {
         max_depth_int.setAttribute('max', '1000');
         max_depth_int.setAttribute('min', '1');
         element.appendChild(max_depth_int);
-        element.appendChild(createSpinnerBox('model_param_3_1', 1000, 10, 1)[0]);
-        element.appendChild(createSpinnerBox('model_param_3_1', 1000, 10, 1)[1]);
+        element.appendChild(createSpinnerBox('model_param_3_1', 1000, 1, 1)[0]);
+        element.appendChild(createSpinnerBox('model_param_3_1', 1000, 1, 1)[1]);
 
     } else {
 

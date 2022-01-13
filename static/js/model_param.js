@@ -131,8 +131,8 @@ const getRandomForestRegressorParams = () => {
     const criterion = document.createElement('select');
     const friedman_mse = document.createElement('option');
     const squared_error = document.createElement('option');
-    friedman_mse.setAttribute('value', 'friedman_mse');
-    friedman_mse.appendChild(document.createTextNode('friedman_mse'));
+    friedman_mse.setAttribute('value', 'absolute_error');
+    friedman_mse.appendChild(document.createTextNode('absolute_error'));
     squared_error.setAttribute('value', 'squared_error');
     squared_error.appendChild(document.createTextNode('squared_error'));
     criterion.setAttribute('name', 'model_param_2');

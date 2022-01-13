@@ -37,7 +37,7 @@ def machine_learning(df,target,model,model_param,dele_columns):
                 continue
 
     # 学習データ用意
-    df = df.sample(frac=1) # データをシャッフル
+    df = df.sample(frac=1,random_state=88) # データをシャッフル
     target_data = df[target]
     train_data = df.drop(columns=target)
     # train_data,x_test,target_data,y_test = model_selection.train_test_split(train_data,target_data,test_size = 0.01,shuffle=False)
@@ -107,7 +107,7 @@ def RFR(train_data,target_data,param):
                         )
 
                 train_size = np.linspace(0.1, 1.0, 5)
-                train_sizes, train_scores, test_scores = model_selection.learning_curve(estimator = model, X = train_data, y = target_data ,cv = 10,train_sizes=train_size)
+                train_sizes, train_scores, test_scores = model_selection.learning_curve(estimator = model, X = train_data, y = target_data ,cv = 10,train_sizes=train_size ,random_state=88)
                 train_scores_mean = np.mean(train_scores, axis=1)
                 test_scores_mean = np.mean(test_scores, axis=1)
 
