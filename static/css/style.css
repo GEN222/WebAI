@@ -82,6 +82,7 @@ button.btn:hover{
     /* padding: 10px; */
     max-width: max-content;
     text-align: center;
+    align-items: flex-end;
     padding: 5px 10px;
     margin: 1em auto;
     margin-bottom: 2%;
@@ -94,7 +95,24 @@ button.btn:hover{
 }
 
 .info_button{
-    /* background-color: #384878; */
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #f0f8ff;
+    color: #384878;
+    margin-left: 0.5em;
+    width: 1.5em;
+    height: 1.5em;
+    /* line-height: 1em; */
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    transition: .4s;
+    cursor: pointer;
+}
+.info_button:hover{
+    background: #384878;
+    color: #f0f8ff;
 }
 
 

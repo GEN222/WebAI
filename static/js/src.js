@@ -95,14 +95,15 @@ const removeElement = (id) => {
 const createText = (textValue) => {
 
     const div = document.createElement('div');
-    const button = document.createElement('button');
-    button.setAttribute('class', 'info_button');
-    button.innerHTML = "？";
+    const span = document.createElement('span');
+    span.setAttribute('class', 'info_button');
+    span.innerHTML = "？";
+    span.onclick = function () { alert('使い方を書くーー'); };
     const text = document.createElement('p');
     text.setAttribute('class', 'info_message');
-    text.innerHTML = textValue + "　";
+    text.innerHTML = textValue;
 
-    text.appendChild(button);
+    text.appendChild(span);
     div.appendChild(text);
     return div
 
