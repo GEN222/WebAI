@@ -94,11 +94,17 @@ const removeElement = (id) => {
 // textを生成し戻す
 const createText = (textValue) => {
 
+    const div = document.createElement('div');
+    const button = document.createElement('button');
+    button.setAttribute('class', 'info_button');
+    button.innerHTML = "？";
     const text = document.createElement('p');
     text.setAttribute('class', 'info_message');
-    text.innerHTML = textValue;
+    text.innerHTML = textValue + "　";
 
-    return text
+    text.appendChild(button);
+    div.appendChild(text);
+    return div
 
 }
 
