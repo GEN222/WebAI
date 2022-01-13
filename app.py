@@ -117,9 +117,9 @@ def param():
     dele_columns = request.form.getlist('dele_param')
 
     # 必須の値がない場合の処理
-    if not target:
+    if not target or target == 'default':
         return jsonify(values=json.dumps({'result': '-1' , 'message': '目的変数を選択してください' }, cls=ml.MyEncoder))
-    if not model:
+    if not model or model == 'default':
         return jsonify(values=json.dumps({'result': '-1' , 'message': 'モデルを選択してください' }, cls=ml.MyEncoder))
 
     # sessionの値を取得
