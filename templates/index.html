@@ -18,6 +18,7 @@
   <script src="{{ url_for('static',filename='js/graph.js') }}"></script>
 
   <link rel='stylesheet' href='static/css/style.css'>
+  <link rel='stylesheet' href='static/css/header.css'>
   <link rel='stylesheet' href='static/css/select.css'>
   <link rel='stylesheet' href='static/css/check.css'>
 
@@ -31,17 +32,17 @@
 <!-- Header Start -->
 <header class="site-header">
   <div class="wrapper site-header__wrapper">
-    <a href="#" class="brand">Brand</a>
+    <!-- <a href="#" class="brand">Brand</a> -->
+    <h1>WebAI</h1>
     <nav class="nav">
       <button class="nav__toggle" aria-expanded="false" type="button">
         menu
       </button>
       <ul class="nav__wrapper">
-        <li class="nav__item"><a href="#">Home</a></li>
-        <li class="nav__item"><a href="#">About</a></li>
-        <li class="nav__item"><a href="#">Services</a></li>
-        <li class="nav__item"><a href="#">Hire us</a></li>
-        <li class="nav__item"><a href="#">Contact</a></li>
+        <li class="nav__item"><a href="{{ url_for('static',filename='PDF/機械学習の概要.pdf') }}" target="_blank" rel="noopener noreferrer">機械学習とは？</a></li>
+        <li class="nav__item"><a href="#">アプリ概要</a></li>
+        <li class="nav__item"><a href="#">使い方</a></li>
+        <li class="nav__item"><a href="#">チュートリアル</a></li>
       </ul>
     </nav>
   </div>
