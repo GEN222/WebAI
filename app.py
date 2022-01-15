@@ -24,7 +24,7 @@ from python import ml
 # flaskの設定など
 app = Flask(__name__)
 app.secret_key  = os.urandom(24)
-app.permanent_session_lifetime = timedelta(minutes=5)
+app.permanent_session_lifetime = timedelta(minutes=30)
 
 # トップページにアクセスされたらindex.htmlを表示する
 @app.route('/')
