@@ -98,7 +98,7 @@ const createText = (textValue) => {
     const span = document.createElement('span');
     span.setAttribute('class', 'info_button');
     span.innerHTML = "？";
-    span.onclick = function () { alert('使い方を書くーー'); };
+    span.onclick = function () { alertInfo(); };
     const text = document.createElement('p');
     text.setAttribute('class', 'info_message');
     text.innerHTML = textValue;
@@ -107,6 +107,15 @@ const createText = (textValue) => {
     div.appendChild(text);
     return div
 
+}
+
+const alertInfo = () => {
+    // 引数に応じて表示する説明を変更する
+    Swal.fire({
+        icon: 'question',
+        title: '説明だよ',
+        confirmButtonColor: '#384878'
+    })
 }
 
 
