@@ -61,6 +61,7 @@ const alertSelect = () => {
     div.appendChild(select);
 
     Swal.fire({
+        icon: 'info',
         title: 'サンプルを選んでください',
         html: div,
         confirmButtonColor: '#384878'
