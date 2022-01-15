@@ -92,13 +92,13 @@ const removeElement = (id) => {
 
 
 // textを生成し戻す
-const createText = (textValue) => {
+const createText = (textValue, key) => {
 
     const div = document.createElement('div');
     const span = document.createElement('span');
     span.setAttribute('class', 'info_button');
     span.innerHTML = "？";
-    span.onclick = function () { alertInfo(); };
+    span.onclick = function () { alertInfo(key); };
     const text = document.createElement('p');
     text.setAttribute('class', 'info_message');
     text.innerHTML = textValue;
@@ -109,11 +109,12 @@ const createText = (textValue) => {
 
 }
 
-const alertInfo = () => {
+const alertInfo = (key) => {
+
     // 引数に応じて表示する説明を変更する
     Swal.fire({
         icon: 'question',
-        title: '説明だよ',
+        title: key,
         confirmButtonColor: '#384878'
     })
 }
@@ -154,7 +155,7 @@ const createTargetMenu = (columns) => {
 
     // それぞれの要素を親に追加
     selectMenu.appendChild(select);
-    targetMenu.appendChild(createText('目的変数を選択してください'));
+    targetMenu.appendChild(createText('目的変数を選択してください', 'target'));
     targetMenu.appendChild(selectMenu);
     wrapper.appendChild(targetMenu);
 
@@ -189,7 +190,7 @@ const createNullMenu = (nullColumns) => {
         select.onchange = function () { switchRadioMenus(this.value, keys); };
         select.appendChild(createOption('default', '欠損値を選択してください'));
 
-        nullMenu.appendChild(createText('欠損値の処理を選択してください'));
+        nullMenu.appendChild(createText('欠損値の処理を選択してください', 'null'));
         selectMenu.appendChild(select);
 
         const radioMenu = document.createElement('div');
@@ -345,7 +346,7 @@ const createDeleMenu = (values) => {
 
     }
 
-    deleMenu.appendChild(createText('削除する値を選択してください'));
+    deleMenu.appendChild(createText('削除する値を選択してください', 'dele'));
     deleMenu.appendChild(checkboxMenu);
     wrapper.appendChild(deleMenu);
 }

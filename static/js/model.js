@@ -35,7 +35,7 @@ const createModelMenu = () => {
     }
 
     selectMenu.appendChild(select);
-    modelMenu.appendChild(createText('モデルとパラメーターを選択してください'));
+    modelMenu.appendChild(createText('モデルとパラメーターを選択してください', 'model'));
     modelMenu.appendChild(selectMenu);
     wrapper.appendChild(modelMenu);
 
