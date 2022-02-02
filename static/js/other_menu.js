@@ -39,3 +39,43 @@ const createTargetMenu = (columns) => {
     wrapper.appendChild(targetMenu);
 
 }
+
+
+const createDeleMenu = (values) => {
+
+    const wrapper = document.getElementById('param_area');
+    const deleMenuId = 'dele_menu';
+
+    removeElement(deleMenuId);
+
+    const deleMenu = document.createElement('div');
+    deleMenu.setAttribute('id', deleMenuId);
+
+    // checkboxのdiv
+    const checkboxMenu = document.createElement('div');
+
+    for (var i = 0; i < values.length; i++) {
+        const input = document.createElement('input');
+        const label = document.createElement('label');
+        const br = document.createElement('br');
+        const value = values[i];
+        const id = 'dele_parameters_area_' + value;
+        const name = 'dele_param';
+        input.setAttribute('type', 'checkbox');
+        input.setAttribute('value', value);
+        input.setAttribute('id', id);
+        input.setAttribute('name', name);
+        input.setAttribute('class', 'check-inline__input');
+        label.setAttribute('for', id);
+        label.setAttribute('class', 'check-inline__label');
+        label.innerHTML = value;
+
+        checkboxMenu.appendChild(input);
+        checkboxMenu.appendChild(label);
+
+    }
+
+    deleMenu.appendChild(createText('削除する値を選択してください', 'dele'));
+    deleMenu.appendChild(checkboxMenu);
+    wrapper.appendChild(deleMenu);
+}
