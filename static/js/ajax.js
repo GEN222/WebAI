@@ -113,8 +113,12 @@ const paramHandler = () => {
             const img_data = JSON.parse(data.values).img_data;
             plot.src = "data:image/png:base64," + img_data;
 
+            const title = document.createElement('p');
+            title.innerHTML = '学習結果';
+            title.appendChild(createAlertInfoButton('target'));
+
             Swal.fire({
-                title: '学習結果',
+                title: title,
                 // text: '学習結果',
                 imageUrl: "data:image/png:base64," + img_data,
                 confirmButtonColor: '#384878'
