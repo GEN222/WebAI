@@ -131,14 +131,18 @@ const getRandomForestRegressorParams = () => {
     const criterion = document.createElement('select');
     const squared_error = document.createElement('option');
     const absolute_error = document.createElement('option');
+    const poisson = document.createElement('option');
     squared_error.setAttribute('value', 'squared_error');
     squared_error.appendChild(document.createTextNode('squared_error'));
     absolute_error.setAttribute('value', 'absolute_error');
     absolute_error.appendChild(document.createTextNode('absolute_error'));
+    poisson.setAttribute('value', 'poisson');
+    poisson.appendChild(document.createTextNode('poisson'));
     criterion.setAttribute('name', 'model_param_2');
     criterion.setAttribute('id', 'model_param_2');
     criterion.appendChild(squared_error);
     criterion.appendChild(absolute_error);
+    criterion.appendChild(poisson);
     criterion_label.innerHTML = 'criterion';
     criterion_label.setAttribute('for', 'model_param_2');
     td2.appendChild(criterion_label);
