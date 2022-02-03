@@ -96,18 +96,25 @@ const removeElement = (id) => {
 const createText = (textValue, key) => {
 
     const div = document.createElement('div');
-    const span = document.createElement('span');
-    span.setAttribute('class', 'info_button');
-    span.innerHTML = "？";
-    span.onclick = function () { alertInfo(key); };
+
     const text = document.createElement('p');
     text.setAttribute('class', 'info_message');
     text.innerHTML = textValue;
 
-    text.appendChild(span);
+    text.appendChild(createAlertInfoButton(key));
     div.appendChild(text);
     return div
 
+}
+
+const createAlertInfoButton = (key) => {
+
+    const span = document.createElement('span');
+    span.setAttribute('class', 'info_button');
+    span.innerHTML = "？";
+    span.onclick = function () { alertInfo(key); };
+
+    return span
 }
 
 const alertInfo = (key) => {
@@ -171,8 +178,12 @@ const alertImage = () => {
     const img = document.getElementById('plot_graph');
     const src = img.src;
 
+    const title = document.createElement('p');
+    title.innerHTML = 'グラフ結果';
+    title.appendChild(createAlertInfoButton('target'));
+
     Swal.fire({
-        title: 'グラフ結果',
+        title: title,
         imageUrl: src,
         imageAlt: 'Custom image',
         confirmButtonColor: '#384878'
