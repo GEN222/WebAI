@@ -117,12 +117,13 @@ def RFR(train_data,target_data,param):
                 raise Exception('モデルの選択を間違えています！')
 
         except Exception as e:
+            print(e)
             raise Exception('学習段階でエラーが出ました！')
 
 
 def XGB(train_data,target_data,radio_param):
 
-        train = xgb.DMatrix(train_data, label=target_data)
+        # train = xgb.DMatrix(train_data, label=target_data)
 
         try:
                 # xgbはobjectiveによってモデルを選択
@@ -154,7 +155,9 @@ def XGB(train_data,target_data,radio_param):
                 raise Exception('XGBoostのobjectiveの選択に間違いがあります')
 
         except Exception as e:
+            print(e)
             raise Exception('学習段階でエラーが出ました！')
+            
 
 
 # 与えられたdfがobjectTypeだった場合に数値に変換
