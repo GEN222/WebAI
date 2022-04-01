@@ -4,9 +4,9 @@ WebAI is a web application aimed at learning machine learning.
 
 # Features
 
-With WebAI, you can experience machine learning without writing any program code as long as you have CSV.
+WebAI allows you to experience machine learning without writing program code.
 
-Data visualization is also available, so you can train your model while thinking about the data you need.
+Data visualization is also available, so you can train models while thinking about the data you need.
 
 # Requirement
 
